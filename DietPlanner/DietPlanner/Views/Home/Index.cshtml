@@ -1,0 +1,38 @@
+﻿
+@{
+     Layout = "_Layout";
+}
+<link rel="stylesheet" href="~/css/Index.css" />
+
+@if (TempData["Successful"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Successful"]
+    </div>
+}
+
+        <div class="height-100">
+            <div class="grid">
+                <div class="grid-item big">1</div>
+                <div class="grid-item regular">2</div>
+                <div class="grid-item regular">3</div>
+                <div class="grid-item regular">4</div>
+                <div class="grid-item regular">5</div>
+                <div class="grid-item long">
+                    <div class="widget">
+                        <canvas id="chart">6</canvas>
+                    </div>
+                </div>
+                <div class="grid-item tiny">7</div>
+                <div class="grid-item regular">8</div>
+                <div class="grid-item tiny">9</div>
+            </div>
+        </div>
+        <!-- <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        ></script> -->
+
+    <script src="~/js/Layout.js" asp-append-version="true"></script>
+
+

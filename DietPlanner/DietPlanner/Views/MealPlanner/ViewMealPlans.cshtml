@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Services.ViewModels.MealPlanViewModel>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PlanName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalorieCount)
+        </th><th>
+            @Html.DisplayNameFor(model => model.NutritionInfo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PlanName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlanDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalorieCount)
+            </td><td>
+                @Html.DisplayFor(modelItem => item.NutritionInfo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEmpDetails", new { id = item.PlanName }) |
+                @Html.ActionLink("Delete", "DeleteEmp", new { id = item.PlanName }, new { onclick = "return confirm('Are sure wants to delete?');" })
+            </td>
+        </tr>
+
+    }
+
+</table>

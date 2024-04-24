@@ -1,0 +1,17 @@
+﻿@model Services.ViewModels.MealViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="meal_details_container">
+    <h3> Admin : Meal Details</h3>
+
+    <div>
+        <button asp-controller="MealDetail" asp-action="GetMealPlan" formmethod="post" type="button">Get Meal Details</button>
+        <button asp-controller="MealDetail" asp-action="CreateMeal" type="button">Post Meal Details</button>
+        <button type="button">Delete Meal Details</button>
+        <button type="button">Update Meal Details</button>
+
+    </div>
+</div>
