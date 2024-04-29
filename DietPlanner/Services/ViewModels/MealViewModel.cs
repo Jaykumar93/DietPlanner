@@ -26,11 +26,11 @@ namespace Services.ViewModels
         public int CalorieCount { get; set; }
 
         public string MealVitamin { get; set; } = null!;
-        public string MealMinerals { get; set; } = null!;
-        public string MealProtein { get; set; } = null!;
-        public string MealFat { get; set; } = null!;
-        public string MealCarbohydrates { get; set; } = null!;
-        public string MealWater { get; set; } = null!;
+        public string MealMinerals { get; set; } = null!;   
+        public int MealProtein { get; set; } 
+        public int MealFat { get; set; } 
+        public int MealCarbohydrates { get; set; } 
+        public int MealWater { get; set; } 
 
         
 

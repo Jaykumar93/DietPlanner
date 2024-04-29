@@ -1,9 +1,9 @@
 using Domain.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
-using Services.AuthServices;
+using Domain.Data;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DietPlanner.Controllers
 {
@@ -21,7 +21,6 @@ namespace DietPlanner.Controllers
 
 
 
-        [NoCache]
         [Authorize]
         public IActionResult Index()
         {

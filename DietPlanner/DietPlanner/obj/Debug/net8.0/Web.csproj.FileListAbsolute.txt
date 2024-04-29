@@ -260,3 +260,4 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.Properties.Resources.resources
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.csproj.GenerateResource.cache
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.sourcelink.json

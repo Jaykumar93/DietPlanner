@@ -12,3 +12,4 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Domain\obj\Debug\net8.0\Domain.sourcelink.json

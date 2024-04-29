@@ -19,17 +19,17 @@
 <form class="m-1 p-1" method="post">
     <div class="form-group">
         <label asp-for="UserName"></label>
-        <input asp-for="UserName" class="form-control" />
+        <input asp-for="UserName" class="form-control" placeholder="Enter Your UserName"/>
         <span asp-validation-for="UserName" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="MealName"></label>
-        <input asp-for="MealName" class="form-control" />
+        <input asp-for="MealName" class="form-control" placeholder="Enter Your Meal Name"/>
         <span asp-validation-for="MealName" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="MealDescription"></label>
-        <input asp-for="MealDescription" type="text" class="form-control" />
+        <input asp-for="MealDescription" type="text" class="form-control" placeholder="Enter your Meal Description"/>
         <span asp-validation-for="MealDescription" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -45,22 +45,22 @@
         <h5>Nutrition Info</h5>
         <div class="form-group">
             <label asp-for="CalorieCount"></label>
-            <input asp-for="CalorieCount" type="number" class="form-control" />
+            <input asp-for="CalorieCount" type="number" class="form-control" placeholder="Enter the Calorie Count"/>
             <span asp-validation-for="CalorieCount" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="MealVitamin"></label>
-            <input asp-for="MealVitamin" type="text" class="form-control" />
+            <input asp-for="MealVitamin" type="text" class="form-control" placeholder="Enter the Vitamins"/>
             <span asp-validation-for="MealVitamin" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="MealMinerals"></label>
-            <input asp-for="MealMinerals" type="number" class="form-control" />
+            <input asp-for="MealMinerals" type="number" class="form-control" placeholder="Enter the Minerals Name" />
             <span asp-validation-for="MealMinerals" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="MealProtein"></label>
-            <input asp-for="MealProtein" type="number" class="form-control" />
+            <input asp-for="MealProtein" type="number" class="form-control" placeholder="Enter Protein Count in gms"/>
             <span asp-validation-for="MealProtein" class="text-danger"></span>
         </div>
         <div class="form-group">

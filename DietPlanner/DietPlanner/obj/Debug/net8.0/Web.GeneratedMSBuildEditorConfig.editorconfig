@@ -42,20 +42,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcQ3JlYXRlTWVhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/GetMealDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcR2V0TWVhbERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/UpdateMeal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcVXBkYXRlTWVhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/ViewMealDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcVmlld01lYWxEZXRhaWxzLmNzaHRtbA==
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/ViewMeals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcVmlld01lYWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealPlanner/ViewMealPlans.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5uZXJcVmlld01lYWxQbGFucy5jc2h0bWw=
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/ProfileDetail/UpdateProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZURldGFpbFxVcGRhdGVQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/ProfileDetail/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZURldGFpbFxWaWV3UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Shared/Error.cshtml]
