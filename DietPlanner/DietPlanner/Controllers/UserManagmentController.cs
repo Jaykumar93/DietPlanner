@@ -1,20 +1,24 @@
-﻿    using Domain.Data;
+﻿using Domain.Data;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services.AuthServices;
 using Services.ViewModels;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 
 namespace Web.Controllers
 {
     public class UserManagmentController : Controller
     {
-        private readonly DietContext _context;
+        private readonly Domain.Data.DietContext _context;
         private readonly IConfiguration _config;
         private readonly Validation _validation;
 
-        public UserManagmentController(DietContext context,IConfiguration config,Validation validation)
+        public UserManagmentController(Domain.Data.DietContext context,IConfiguration config,Validation validation)
         {
             _context = context;
             _config = config;
@@ -34,7 +38,7 @@ namespace Web.Controllers
             try
             {
                 var userInfo = _context.TblUserDetails.FirstOrDefault(user => user.Email == login.Email);
-
+                var profileInfo = _context.TblProfileDetails.FirstOrDefault(profile => profile.UserId == userInfo.UserId);
                 if (userInfo == null)
                 {
                     // User not found
@@ -46,9 +50,9 @@ namespace Web.Controllers
 
                 if (encryptedPass == userInfo.PasswordHash)
                 {
-                   /* var roleName = _context.TblRoles.Where(role=> role.RoleId == )*/
+                  
 
-                    var roleName = "user";
+                    var roleName = _context.TblRoles.Where(role=>role.RoleId == profileInfo.RoleId).Select(role=>role.RoleName).FirstOrDefault();
                     var token = Authorization.GetJWTToken(login, _config, roleName);
 
                     
@@ -85,7 +89,7 @@ namespace Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUp(RegistrationModel model, DateTime dateTime)
+        public async Task<IActionResult> SignUp(RegistrationModel model)
         {
             if (!_validation.IsUsernameUnique(model.UserName))
             {
@@ -104,8 +108,6 @@ namespace Web.Controllers
             string PassKey = _config["PasswordKey"];
             string PasswordSalt = null;
             var PasswordHash = Authentication.Encrypt(model.Password, PassKey, out PasswordSalt);
-            TblRole role;
-           
             TblUserDetail user = new TblUserDetail
             {
                 UserName = model.UserName,
@@ -115,7 +117,6 @@ namespace Web.Controllers
                 ContactNumber = model.ContactNumber,
                 PasswordHash = PasswordHash,
                 PasswordSalt = PasswordSalt,
-              
                 CreatedBy = model.UserName,
                 CreatedDate = DateOnly.Parse(currentDate.ToString("yyyy-MM-dd")),
                 ModifiedBy = model.UserName,
@@ -128,9 +129,11 @@ namespace Web.Controllers
             {
                 UserId = _context.TblUserDetails.Where(user => user.UserName == model.UserName).Select(user => user.UserId).FirstOrDefault(),
                 RoleId = _context.TblRoles.Where(role => role.RoleName == "User").Select(role => role.RoleId).FirstOrDefault(),
-                UserGender = "Not Defined",
-			};
-            await _context.TblProfileDetails.AddAsync(profile);
+                UserGender = "Not Specified"
+
+            };
+
+             await _context.TblProfileDetails.AddAsync(profile);
             await _context.SaveChangesAsync();  
 	
 
@@ -147,6 +150,47 @@ namespace Web.Controllers
         }
 
 
+        public async Task<IActionResult> ForgotPassword()
+        {
+            
+            return View();
+        
+        }
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(LoginModel model)
+        {
+            
+            return View();
+        
+        }
+
+        public async Task<IActionResult> LayoutData()
+        {
+            {
+                string jwtToken = HttpContext.Request.Cookies["JWTToken"];
+
+
+                JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+                JwtSecurityToken parsedToken = tokenHandler.ReadJwtToken(jwtToken);
+
+
+                string email = parsedToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
+
+                TblUserDetail userdetail = await _context.TblUserDetails.FirstOrDefaultAsync(user => user.Email == email);
+
+                string imagePath = await _context.TblProfileDetails.Where(profile=>profile.UserId == userdetail.UserId).Select(profile=>profile.ImagePath).FirstOrDefaultAsync();
+
+                var loggedUser = new { Username = userdetail.UserName, ImagePath = imagePath };
+
+                var options = new JsonSerializerOptions
+                {
+                    ReferenceHandler = ReferenceHandler.Preserve,
+
+                };
+                var json = JsonSerializer.Serialize(loggedUser, options);
+                return Ok(json);
+            }
+        }
 
     }
 }

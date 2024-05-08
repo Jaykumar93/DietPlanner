@@ -261,3 +261,5 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.csproj.GenerateResource.cache
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\obj\Debug\net8.0\Web.sourcelink.json
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\StackExchange.Redis.dll

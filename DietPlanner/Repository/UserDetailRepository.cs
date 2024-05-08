@@ -23,9 +23,6 @@ namespace Repository
         }
 
         
-
-   
-
         public void AddUserDetail(TblUserDetail userDetail)
         {
             _context.TblUserDetails.Add(userDetail);

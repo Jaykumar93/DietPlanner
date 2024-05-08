@@ -4,6 +4,7 @@ using Repository;
 using Domain.Data;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
+using Services.AuthServices;
 
 namespace DietPlanner.Controllers
 {
@@ -20,18 +21,20 @@ namespace DietPlanner.Controllers
         }
 
 
-
+        [NoCache]
         [Authorize]
         public IActionResult Index()
         {
            
             return View();
         }
+        [NoCache]
 
         public IActionResult Privacy()
         {
             return View();
         }
+        [NoCache]
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

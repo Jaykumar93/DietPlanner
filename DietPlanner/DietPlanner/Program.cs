@@ -8,6 +8,9 @@ using Services.AuthServices;
 using System.Text;
 using System.Configuration;
 using System.Net;
+using Services.MealPlanServices;
+using Microsoft.Extensions.Caching.Distributed;
+
 
 namespace DietPlanner
 {
@@ -25,17 +28,16 @@ namespace DietPlanner
             builder.Services.AddTransient<UserDetailRepository>();
 
             builder.Services.AddScoped<IMealDetailRepository, MealDetailRepository>();
-            builder.Services.AddScoped<IMealPlanRepository, MealPlanRepository>();
-
+            builder.Services.AddScoped<Services.Upload>();
+            builder.Services.AddScoped<MealInfoSummarize>();
 
             builder.Services.AddControllersWithViews();
             
             //Adding Dbcontext 
             builder.Services.AddDbContext<DietContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-                
-            
-            
 
+            //adding radis caching
+            
 
             //Adding Authentication
             builder.Services.AddAuthentication(options =>
@@ -62,7 +64,7 @@ namespace DietPlanner
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseHsts( );
             }
 
             app.UseHttpsRedirection();

@@ -5,10 +5,57 @@
     var title = "Meal Detail";
     ViewData["Title"] = title;
 }
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["UnSuccessful"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["UnSuccessful"]
+    </div>
+}
 
 <h1>@ViewData["Title"]</h1>
 
 <h3><a asp-action="CreateMeal" class="btn btn-sm btn-secondary">Create New Meal</a></h3>
+
+<form asp-action="ViewMeals">
+    <div class="row">
+        <div class="col-md-8">
+            <input type="text" name="term" class="form-control" placeholder="Enter meal Name" />
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-info">Search</button>
+            </div>
+        </div>
+    </div>
+</form>
+<form id="sortForm" asp-action="ViewMeals" method="get">
+    <div class="row">
+        <div class="col-md-8">
+            <label for="orderBy">SortBy</label>
+            <select id="SubjectList" name="orderBy">
+                <option value="meal_name_desc">Descending : Meal Name</option>
+                <option value="user_name_desc">Descending : User Name</option>
+                <option value="calorie_count_desc">Descending : Calorie Count</option>
+                <option value="user_name">Ascending : User Name</option>
+                <option value="calorie_count">Ascending : Calorie Count</option>
+                <option value="meal_name">Ascending : Meal Name</option>
+            </select>
+     
+        </div>
+    </div>
+</form>
 
 <table class="table">
     <thead>
@@ -55,3 +102,11 @@
         }
     </tbody>
 </table>
+
+<script>
+    $(document).ready(function() {
+        $("#SubjectList").change(function() {
+            $("#sortForm").submit(); // Submit the form when the selection changes
+        });
+    });
+</script>

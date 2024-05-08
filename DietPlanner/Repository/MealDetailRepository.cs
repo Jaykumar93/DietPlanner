@@ -20,7 +20,7 @@ namespace Repository
             string constr = _config.GetConnectionString("DefaultConnection");
             con = new SqlConnection(constr);
         }
-        public MealDetailRepository(DietContext context, IConfiguration config)
+        public MealDetailRepository(Domain.Data.DietContext context, IConfiguration config)
         {
             _context = context;
             _config = config;

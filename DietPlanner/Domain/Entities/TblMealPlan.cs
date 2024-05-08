@@ -7,13 +7,15 @@ public partial class TblMealPlan
 {
     public Guid MealPlanId { get; set; }
 
-    public Guid? MealId { get; set; }
-
     public string? PlanName { get; set; }
 
     public string PlanDescription { get; set; } = null!;
 
-    public int CalorieCount { get; set; }
+    public Guid? BreakfastMealId { get; set; }
+
+    public Guid? LunchMealId { get; set; }
+
+    public Guid? DinnerMealId { get; set; }
 
     public string NutritionInfo { get; set; } = null!;
 
@@ -25,7 +27,11 @@ public partial class TblMealPlan
 
     public DateOnly ModifiedDate { get; set; }
 
-    public virtual TblMeal? Meal { get; set; }
+    public virtual TblMeal? BreakfastMeal { get; set; }
+
+    public virtual TblMeal? DinnerMeal { get; set; }
+
+    public virtual TblMeal? LunchMeal { get; set; }
 
     public virtual ICollection<TblProfileDetail> TblProfileDetails { get; set; } = new List<TblProfileDetail>();
 

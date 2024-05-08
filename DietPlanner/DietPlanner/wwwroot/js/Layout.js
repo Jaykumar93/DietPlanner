@@ -53,3 +53,24 @@ profile.onclick = function () {
     menu.classList.toggle('active');
 }
 
+
+
+// To get the image and username at the top
+
+$(document).ready(function () {
+
+    $.ajax({
+        url: '/UserManagment/LayoutData',
+        type: 'GET',
+        success: function (data) {
+
+            var loggedUser = JSON.parse(data);
+
+            $('#username').text(loggedUser.Username);
+            $('#userImage').attr('src', loggedUser.ImagePath);
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.error('Error occurred while retrieving logged-in user:', errorThrown);
+        }
+    });
+});

@@ -39,6 +39,7 @@ namespace Services.AuthServices
             var Loginclaims = new[]
             {
                 new Claim(ClaimTypes.Name,login.Email),
+               
                 new Claim(ClaimTypes.Role,roleName)
             };
 

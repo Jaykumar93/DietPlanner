@@ -46,7 +46,7 @@ public partial class DietContext : DbContext
     {
         modelBuilder.Entity<TblActivityTracking>(entity =>
         {
-            entity.HasKey(e => e.ActivityId).HasName("PK__tbl_acti__482FBD63206654A4");
+            entity.HasKey(e => e.ActivityId).HasName("PK__tbl_acti__482FBD63468695E7");
 
             entity.ToTable("tbl_activity_tracking");
 
@@ -73,12 +73,12 @@ public partial class DietContext : DbContext
             entity.HasOne(d => d.Profile).WithMany(p => p.TblActivityTrackings)
                 .HasForeignKey(d => d.ProfileId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_activ__profi__27F8EE98");
+                .HasConstraintName("FK__tbl_activ__profi__7BB05806");
         });
 
         modelBuilder.Entity<TblChallenge>(entity =>
         {
-            entity.HasKey(e => e.ChallengeId).HasName("PK__tbl_chal__CF635191DC73559D");
+            entity.HasKey(e => e.ChallengeId).HasName("PK__tbl_chal__CF63519172CCB74E");
 
             entity.ToTable("tbl_challenges");
 
@@ -109,7 +109,7 @@ public partial class DietContext : DbContext
 
         modelBuilder.Entity<TblConsultation>(entity =>
         {
-            entity.HasKey(e => e.ConsultationId).HasName("PK__tbl_cons__650FE0FBDD32CF56");
+            entity.HasKey(e => e.ConsultationId).HasName("PK__tbl_cons__650FE0FB17264E4A");
 
             entity.ToTable("tbl_consultation");
 
@@ -130,17 +130,17 @@ public partial class DietContext : DbContext
             entity.HasOne(d => d.ExpertProfile).WithMany(p => p.TblConsultationExpertProfiles)
                 .HasForeignKey(d => d.ExpertProfileId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_consu__exper__2CBDA3B5");
+                .HasConstraintName("FK__tbl_consu__exper__00750D23");
 
             entity.HasOne(d => d.UserProfile).WithMany(p => p.TblConsultationUserProfiles)
                 .HasForeignKey(d => d.UserProfileId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_consu__user___2BC97F7C");
+                .HasConstraintName("FK__tbl_consu__user___7F80E8EA");
         });
 
         modelBuilder.Entity<TblMeal>(entity =>
         {
-            entity.HasKey(e => e.MealId).HasName("PK__tbl_meal__2910B00FFA5CD6BD");
+            entity.HasKey(e => e.MealId).HasName("PK__tbl_meal__2910B00F2ACE5163");
 
             entity.ToTable("tbl_meals");
 
@@ -175,20 +175,21 @@ public partial class DietContext : DbContext
 
         modelBuilder.Entity<TblMealPlan>(entity =>
         {
-            entity.HasKey(e => e.MealPlanId).HasName("PK__tbl_meal__05C5760741A04A08");
+            entity.HasKey(e => e.MealPlanId).HasName("PK__tbl_meal__05C57607C3A4EC08");
 
             entity.ToTable("tbl_meal_plans");
 
             entity.Property(e => e.MealPlanId)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("meal_plan_id");
-            entity.Property(e => e.CalorieCount).HasColumnName("calorie_count");
+            entity.Property(e => e.BreakfastMealId).HasColumnName("breakfast_meal_id");
             entity.Property(e => e.CreatedBy)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("created_by");
             entity.Property(e => e.CreatedDate).HasColumnName("created_date");
-            entity.Property(e => e.MealId).HasColumnName("meal_id");
+            entity.Property(e => e.DinnerMealId).HasColumnName("dinner_meal_id");
+            entity.Property(e => e.LunchMealId).HasColumnName("lunch_meal_id");
             entity.Property(e => e.ModifiedBy)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -205,14 +206,22 @@ public partial class DietContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("plan_name");
 
-            entity.HasOne(d => d.Meal).WithMany(p => p.TblMealPlans)
-                .HasForeignKey(d => d.MealId)
-                .HasConstraintName("FK__tbl_meal___modif__078C1F06");
+            entity.HasOne(d => d.BreakfastMeal).WithMany(p => p.TblMealPlanBreakfastMeals)
+                .HasForeignKey(d => d.BreakfastMealId)
+                .HasConstraintName("FK__tbl_meal___modif__595B4002");
+
+            entity.HasOne(d => d.DinnerMeal).WithMany(p => p.TblMealPlanDinnerMeals)
+                .HasForeignKey(d => d.DinnerMealId)
+                .HasConstraintName("FK__tbl_meal___dinne__5B438874");
+
+            entity.HasOne(d => d.LunchMeal).WithMany(p => p.TblMealPlanLunchMeals)
+                .HasForeignKey(d => d.LunchMealId)
+                .HasConstraintName("FK__tbl_meal___lunch__5A4F643B");
         });
 
         modelBuilder.Entity<TblPostComment>(entity =>
         {
-            entity.HasKey(e => e.CommentId).HasName("PK__tbl_post__E79576871BE4B380");
+            entity.HasKey(e => e.CommentId).HasName("PK__tbl_post__E7957687D138C9B1");
 
             entity.ToTable("tbl_post_comments");
 
@@ -231,17 +240,17 @@ public partial class DietContext : DbContext
             entity.HasOne(d => d.Post).WithMany(p => p.TblPostComments)
                 .HasForeignKey(d => d.PostId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_post___post___2334397B");
+                .HasConstraintName("FK__tbl_post___post___76EBA2E9");
 
             entity.HasOne(d => d.Profile).WithMany(p => p.TblPostComments)
                 .HasForeignKey(d => d.ProfileId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_post___profi__24285DB4");
+                .HasConstraintName("FK__tbl_post___profi__77DFC722");
         });
 
         modelBuilder.Entity<TblPostLike>(entity =>
         {
-            entity.HasKey(e => e.LikeId).HasName("PK__tbl_post__992C79307453016A");
+            entity.HasKey(e => e.LikeId).HasName("PK__tbl_post__992C7930C5A6B081");
 
             entity.ToTable("tbl_post_likes");
 
@@ -257,17 +266,17 @@ public partial class DietContext : DbContext
             entity.HasOne(d => d.Post).WithMany(p => p.TblPostLikes)
                 .HasForeignKey(d => d.PostId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_post___post___1E6F845E");
+                .HasConstraintName("FK__tbl_post___post___7226EDCC");
 
             entity.HasOne(d => d.Profile).WithMany(p => p.TblPostLikes)
                 .HasForeignKey(d => d.ProfileId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_post___profi__1F63A897");
+                .HasConstraintName("FK__tbl_post___profi__731B1205");
         });
 
         modelBuilder.Entity<TblProfileDetail>(entity =>
         {
-            entity.HasKey(e => e.ProfileId).HasName("PK__tbl_prof__AEBB701FEA9D936E");
+            entity.HasKey(e => e.ProfileId).HasName("PK__tbl_prof__AEBB701F926D7FF1");
 
             entity.ToTable("tbl_profile_details");
 
@@ -294,7 +303,6 @@ public partial class DietContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("user_gender");
             entity.Property(e => e.UserGoals)
-                .HasMaxLength(4000)
                 .IsUnicode(false)
                 .HasColumnName("user_goals");
             entity.Property(e => e.UserHeight)
@@ -303,7 +311,6 @@ public partial class DietContext : DbContext
                 .HasColumnName("user_height");
             entity.Property(e => e.UserId).HasColumnName("user_id");
             entity.Property(e => e.UserSpeciality)
-                .HasMaxLength(1)
                 .IsUnicode(false)
                 .HasColumnName("user_speciality");
             entity.Property(e => e.UserWeight)
@@ -313,30 +320,30 @@ public partial class DietContext : DbContext
 
             entity.HasOne(d => d.Challenge).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.ChallengeId)
-                .HasConstraintName("FK__tbl_profi__chall__13F1F5EB");
+                .HasConstraintName("FK__tbl_profi__chall__67A95F59");
 
             entity.HasOne(d => d.MealPlan).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.MealPlanId)
-                .HasConstraintName("FK__tbl_profi__meal___12FDD1B2");
+                .HasConstraintName("FK__tbl_profi__meal___66B53B20");
 
             entity.HasOne(d => d.Reward).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.RewardId)
-                .HasConstraintName("FK__tbl_profi__rewar__14E61A24");
+                .HasConstraintName("FK__tbl_profi__rewar__689D8392");
 
             entity.HasOne(d => d.Role).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.RoleId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_profi__role___15DA3E5D");
+                .HasConstraintName("FK__tbl_profi__role___6991A7CB");
 
             entity.HasOne(d => d.User).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_profi__user___1209AD79");
+                .HasConstraintName("FK__tbl_profi__user___65C116E7");
         });
 
         modelBuilder.Entity<TblReward>(entity =>
         {
-            entity.HasKey(e => e.RewardId).HasName("PK__tbl_rewa__3DD599BC3BCED87A");
+            entity.HasKey(e => e.RewardId).HasName("PK__tbl_rewa__3DD599BC7E968FF9");
 
             entity.ToTable("tbl_rewards");
 
@@ -351,12 +358,12 @@ public partial class DietContext : DbContext
             entity.HasOne(d => d.Challenge).WithMany(p => p.TblRewards)
                 .HasForeignKey(d => d.ChallengeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_rewar__chall__0E391C95");
+                .HasConstraintName("FK__tbl_rewar__chall__61F08603");
         });
 
         modelBuilder.Entity<TblRole>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__tbl_role__760965CC8D4414E4");
+            entity.HasKey(e => e.RoleId).HasName("PK__tbl_role__760965CC17DFA2D5");
 
             entity.ToTable("tbl_role");
 
@@ -371,13 +378,13 @@ public partial class DietContext : DbContext
 
         modelBuilder.Entity<TblUserDetail>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__tbl_user__B9BE370FE2B6EB41");
+            entity.HasKey(e => e.UserId).HasName("PK__tbl_user__B9BE370F102D18C5");
 
             entity.ToTable("tbl_user_details");
 
-            entity.HasIndex(e => e.UserName, "UQ__tbl_user__7C9273C4CCBDA5CF").IsUnique();
+            entity.HasIndex(e => e.UserName, "UQ__tbl_user__7C9273C4623A99B5").IsUnique();
 
-            entity.HasIndex(e => e.Email, "UQ__tbl_user__AB6E6164438F57C9").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__tbl_user__AB6E616413F8AA14").IsUnique();
 
             entity.Property(e => e.UserId)
                 .HasDefaultValueSql("(newid())")
@@ -418,7 +425,7 @@ public partial class DietContext : DbContext
 
         modelBuilder.Entity<TblUserPost>(entity =>
         {
-            entity.HasKey(e => e.PostId).HasName("PK__tbl_user__3ED7876683713794");
+            entity.HasKey(e => e.PostId).HasName("PK__tbl_user__3ED78766A70E2A27");
 
             entity.ToTable("tbl_user_post");
 
@@ -436,12 +443,12 @@ public partial class DietContext : DbContext
 
             entity.HasOne(d => d.MealPlan).WithMany(p => p.TblUserPosts)
                 .HasForeignKey(d => d.MealPlanId)
-                .HasConstraintName("FK__tbl_user___meal___19AACF41");
+                .HasConstraintName("FK__tbl_user___meal___6D6238AF");
 
             entity.HasOne(d => d.Profile).WithMany(p => p.TblUserPosts)
                 .HasForeignKey(d => d.ProfileId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_user___profi__1A9EF37A");
+                .HasConstraintName("FK__tbl_user___profi__6E565CE8");
         });
 
         OnModelCreatingPartial(modelBuilder);

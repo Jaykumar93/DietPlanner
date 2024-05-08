@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fAXABeYDB2oZKk5U80/Ig0OUuVxHFLlFESxU0wTBuQrOgoMeVxTBM5xOGmvWuxBwY5kdBJsMlg2fzprgejanow==",
+  "dgSpecHash": "WJpsQJJ6OBs+MTAg2YwFMC3CH/GY/g3BOuWtxYybl1tYjG7uZmGpMnRpJcBE4KXwj3vPWiNUKY2FRL6K0XN0zA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
@@ -121,6 +121,8 @@
     "C:\\Users\\Coditas-Admin\\.nuget\\packages\\nuget.projectmodel\\6.9.1\\nuget.projectmodel.6.9.1.nupkg.sha512",
     "C:\\Users\\Coditas-Admin\\.nuget\\packages\\nuget.protocol\\6.9.1\\nuget.protocol.6.9.1.nupkg.sha512",
     "C:\\Users\\Coditas-Admin\\.nuget\\packages\\nuget.versioning\\6.9.1\\nuget.versioning.6.9.1.nupkg.sha512",
+    "C:\\Users\\Coditas-Admin\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\Coditas-Admin\\.nuget\\packages\\stackexchange.redis\\2.7.33\\stackexchange.redis.2.7.33.nupkg.sha512",
     "C:\\Users\\Coditas-Admin\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Coditas-Admin\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\Coditas-Admin\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

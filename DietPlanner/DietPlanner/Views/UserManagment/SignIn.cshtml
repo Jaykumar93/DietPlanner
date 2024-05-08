@@ -67,9 +67,9 @@
                                 <span asp-validation-for="Password" class="text-danger"></span>
 
                             </div>
-                            <div class="text"><a href="#">Forgot password?</a></div>
+                            <div class="text"><a asp-controller="UserManagment" asp-action="ForgotPassword">Forgot password?</a></div>
                             <div class="button input-box">
-                                <input type="submit" value="Sumbit">
+                                <input type="submit" value="Submit">
                             </div>
                             <div class="text sign-up-text">Don't have an account? <a asp-controller="UserManagment" asp-action="SignUp"> <label for="flip">Sigup now</label></a>
                                 </div>

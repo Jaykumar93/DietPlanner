@@ -1,0 +1,62 @@
+﻿@using static Services.DTO.ChallengesRewardViewModel
+@model Services.DTO.ChallengesRewardViewModel
+
+@{
+    Layout = "_Layout";
+    var title = "CREATE Challenges ";
+    ViewData["Title"] = title;
+}
+
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+
+<h2>@title</h2>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+    <div class="form-group">
+        <label asp-for="ChallengeName"></label>
+        <input asp-for="ChallengeName" class="form-control" placeholder="Enter Challenge Name" />
+        <span asp-validation-for="ChallengeName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ChallengeDescription"></label>
+        <input asp-for="ChallengeDescription" class="form-control" placeholder="Enter Challenge Description" />
+        <span asp-validation-for="ChallengeDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ChallengeGoals"></label>
+        <input asp-for="ChallengeGoals" type="text" class="form-control" placeholder="Enter your challenge Goals" />
+        <span asp-validation-for="ChallengeGoals" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartDatetime"></label>
+        <input asp-for="StartDatetime" type="datetime-local" class="form-control" placeholder="Enter Start Date and time" />
+        <span asp-validation-for="StartDatetime" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="EndDatetime"></label>
+        <input asp-for="EndDatetime" type="datetime-local" class="form-control" placeholder="Enter End Date and time" />
+        <span asp-validation-for="EndDatetime" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="RewardDescription"></label>
+        <input asp-for="RewardDescription" type="text" class="form-control" placeholder="Enter Reward Description " />
+        <span asp-validation-for="RewardDescription" class="text-danger"></span>
+    </div>
+  
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

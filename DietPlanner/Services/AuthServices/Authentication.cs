@@ -36,8 +36,7 @@ namespace Services.AuthServices
 
             }
         }
-
-
+            
         public static string Checking(string password, string key,string iv)
         {
             using (Aes aes = Aes.Create())

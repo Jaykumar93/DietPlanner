@@ -1,4 +1,4 @@
-﻿@model Services.ViewModels.ProfileDetailViewModel
+﻿@model Services.DTO.ProfileDetailViewModel
 
 
 @{
@@ -16,7 +16,7 @@
 <h2>@title</h2>
 
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<form class="m-1 p-1" method="post">
+<form class="m-1 p-1" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="UserName"></label>
         <input asp-for="UserName" class="form-control" readonly />
@@ -27,40 +27,45 @@
     </div>
     <div class="form-group">
         <label asp-for="UserGender"></label>
-        <input asp-for="UserGender" type="text" class="form-control" readonly />
+        <input asp-for="UserGender" type="text" class="form-control"  />
         <span asp-validation-for="UserGender" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="UserWeight"></label>
-        <input asp-for="UserWeight" type="number" class="form-control" readonly />
+        <input asp-for="UserWeight" type="number" class="form-control"  />
         <span asp-validation-for="UserWeight" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="UserHeight"></label>
-        <input asp-for="UserHeight" type="text" class="form-control" readonly />
+        <input asp-for="UserHeight" type="text" class="form-control"  />
         <span asp-validation-for="UserHeight" class="text-danger"></span>
     </div>
     <div class="form-group">
+        <label asp-for="ImagePath"></label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+        <span asp-validation-for="ImagePath" class="text-danger"></span>
+    </div>
+    <div class="form-group">
         <label asp-for="UserCalorieLimit"></label>
-        <input asp-for="UserCalorieLimit" type="number" class="form-control" readonly />
+        <input asp-for="UserCalorieLimit" type="number" class="form-control"  />
         <span asp-validation-for="UserCalorieLimit" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="UserGoals"></label>
-        <input asp-for="UserGoals" type="number" class="form-control" readonly />
+        <input asp-for="UserGoals" type="text" class="form-control"  />
         <span asp-validation-for="UserGoals" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="UserSpeciality"></label>
-        <input asp-for="UserSpeciality" type="number" class="form-control" readonly />
+        <input asp-for="UserSpeciality" type="text" class="form-control"  />
         <span asp-validation-for="UserSpeciality" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="UserCertification"></label>
-        <input asp-for="UserCertification" type="number" class="form-control" readonly />
+        <input asp-for="UserCertification" type="file" class="form-control"  />
         <span asp-validation-for="UserCertification" class="text-danger"></span>
-    </div>
-    <button type="Update Details" class="btn btn-primary">Update</button>
+   </div>
+    <button type="Update Details" class="btn btn-primary">Apply Change</button>
 </form>
 
 @section scripts {

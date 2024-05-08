@@ -23,5 +23,9 @@ public partial class TblMeal
 
     public DateOnly ModifiedDate { get; set; }
 
-    public virtual ICollection<TblMealPlan> TblMealPlans { get; set; } = new List<TblMealPlan>();
+    public virtual ICollection<TblMealPlan> TblMealPlanBreakfastMeals { get; set; } = new List<TblMealPlan>();
+
+    public virtual ICollection<TblMealPlan> TblMealPlanDinnerMeals { get; set; } = new List<TblMealPlan>();
+
+    public virtual ICollection<TblMealPlan> TblMealPlanLunchMeals { get; set; } = new List<TblMealPlan>();
 }
