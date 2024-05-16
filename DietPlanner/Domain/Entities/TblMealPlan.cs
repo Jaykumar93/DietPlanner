@@ -27,6 +27,8 @@ public partial class TblMealPlan
 
     public DateOnly ModifiedDate { get; set; }
 
+    public string? PlanImagePath { get; set; }
+
     public virtual TblMeal? BreakfastMeal { get; set; }
 
     public virtual TblMeal? DinnerMeal { get; set; }

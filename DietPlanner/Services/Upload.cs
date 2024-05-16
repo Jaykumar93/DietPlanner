@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Services
 {
@@ -46,6 +41,10 @@ namespace Services
             if (CertificateFile != null && CertificateFile.Length > 0)
             {
                 var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "CertificateFile");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
                 var uniqueFileName = Guid.NewGuid().ToString() + "_" + CertificateFile.FileName;
                 var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
@@ -57,7 +56,110 @@ namespace Services
 
                 return "/CertificateFile/" + uniqueFileName;
             }
-            return "/CertificateFile/default-profile.png";
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> UploadMealImage(IFormFile mealImage)
+        {
+            if (mealImage != null && mealImage.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "MealImage");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + mealImage.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await mealImage.CopyToAsync(fileStream);
+                }
+                return "/MealImage/" + uniqueFileName;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> UploadPlanImage(IFormFile planImage)
+        {
+            if (planImage != null && planImage.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "planImage");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + planImage.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await planImage.CopyToAsync(fileStream);
+                }
+                return "/planImage/" + uniqueFileName;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> UploadRewardImage(IFormFile rewardImage)
+        {
+            if (rewardImage != null && rewardImage.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "rewardImage");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + rewardImage.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await rewardImage.CopyToAsync(fileStream);
+                }
+                return "/rewardImage/" + uniqueFileName;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> UploadChallengeImage(IFormFile challengeImage)
+        {
+            if (challengeImage != null && challengeImage.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "challengeImage");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + challengeImage.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await challengeImage.CopyToAsync(fileStream);
+                }
+                return "/challengeImage/" + uniqueFileName;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

@@ -3,13 +3,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Repository;
-using Repository.Interfaces;
 using Services.AuthServices;
 using System.Text;
-using System.Configuration;
 using System.Net;
 using Services.MealPlanServices;
-using Microsoft.Extensions.Caching.Distributed;
+using EasyCaching.Core.Configurations;
+using System.Configuration;
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 
 
 namespace DietPlanner
@@ -20,16 +21,25 @@ namespace DietPlanner
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddStackExchangeRedisCache(options =>
+            {options.Configuration = "localhost:6379";
+            });
 
-            // Add services to the container.
+            builder.Services.AddNotyf(config =>
+            {
+                config.DurationInSeconds = 10;
+                config.IsDismissable = true;
+                config.Position = NotyfPosition.TopCenter;
+            }
+);
             builder.Services.AddSession();
 
             builder.Services.AddTransient<Validation>();
             builder.Services.AddTransient<UserDetailRepository>();
 
-            builder.Services.AddScoped<IMealDetailRepository, MealDetailRepository>();
             builder.Services.AddScoped<Services.Upload>();
             builder.Services.AddScoped<MealInfoSummarize>();
+            builder.Services.AddScoped<MealDetailRepository>();
 
             builder.Services.AddControllersWithViews();
             
@@ -69,7 +79,7 @@ namespace DietPlanner
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseNotyf();
             app.Use(async (context, next) =>
             {
                 await next();
@@ -83,7 +93,7 @@ namespace DietPlanner
                     }
                     else
                     {
-                        string loginUrl = $"/UserManagment/SignIn?returnUrl={context.Request.Path.Value}&message=Please log in to access this resource.";
+                        string loginUrl = $"/Auth/SignIn?returnUrl={context.Request.Path.Value}&message=Please log in to access this resource.";
                         context.Response.Redirect(loginUrl);
                     }
                 }
@@ -104,7 +114,7 @@ namespace DietPlanner
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=UserManagment}/{action=SignIn}/{id?}");
+                pattern: "{controller=Auth}/{action=SignIn}/{id?}");
 
             app.Run();
         }

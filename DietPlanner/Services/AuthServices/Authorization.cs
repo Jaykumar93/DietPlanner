@@ -1,16 +1,10 @@
-﻿using System;
-using System.Configuration;
-using System.Data;
+﻿using System.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Domain.Data;
-using Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using NuGet.Common;
-using Services.ViewModels;
-
+using Domain.DTO;
 namespace Services.AuthServices
 {
     public class Authorization

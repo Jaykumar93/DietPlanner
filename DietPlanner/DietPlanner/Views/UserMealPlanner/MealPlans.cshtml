@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Domain.DTO.MealViewModel>
+
+@{
+    Layout = "_Layout";
+    var title = "Let's Plan Your Perfect Meal";
+    ViewData["Title"] = title;
+}
+
+
+<link rel="stylesheet" href="~/css/UserMealPlanner.css" />
+<div class='search_con'>
+    <form asp-action="MealPlans" method="get" class="input_con">
+
+        <input type="text" name="term" placeholder="Search......." spellCheck="False" id="queryFind" />
+        <span id="clearBtn"><i class="bi bi-x-lg"></i></span>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+    </form>
+</div>
+<form class="form-sort" id="sortForm" asp-action="MealPlans" method="get">
+    <div class="row">
+        <div class="col-md-8">
+            <label for="orderBy">SortBy</label>
+            <select id="SubjectList" name="orderBy">
+                <option value="plan_name_desc">Descending : Plan Name</option>
+                <option value="user_name_desc">Descending : User Name</option>
+                <option value="calorie_count_desc">Descending : Calorie Count</option>
+                <option value="user_name">Ascending : User Name</option>
+                <option value="calorie_count">Ascending : Calorie Count</option>
+                <option value="plan_name">Ascending : Plan Name</option>
+            </select>
+        </div>
+    </div>
+</form>
+<form class="form-filter" asp-action="MealPlans" method="get">
+    <div class="form-group">
+        <label for="minCalorie">Minimum Calorie</label>
+        <input type="number" class="form-control" id="minCalorie" name="minCalorie" value="@ViewBag.minCalorie">
+    </div>
+    <div class="form-group">
+        <label for="maxCalorie">Maximum Calorie</label>
+        <input type="number" class="form-control" id="maxCalorie" name="maxCalorie" value="@ViewBag.maxCalorie">
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+    
+    @* <form asp-action="MealPlans" method="get">
+        <div class="form-group">
+            <label>Filter by Meal :</label>
+            <div>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="selectedCategories" value="@category.Value" @(ViewBag.SelectedCategories?.Contains(category.Value) == true ? "checked" : "")>
+                    <label class="form-check-label">@category.Text</label>
+                </div>
+            }
+            </div>
+        </div> 
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form> *@
+<div class="container">
+    @foreach (var meal in Model)
+    {
+        <div class="card">
+            <div class="card-image">
+                <img src="@Url.Content(meal.Imglocation)" />
+            </div>
+            <div class="card-heading">@meal.MealName</div>
+            <div class="card-text">@meal.MealDescription</div>
+            <div class="card-text">@meal.TypeOfMeal</div>
+            <a href="#" class="card-button">More Info</a>
+        </div>
+    }
+</div>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#SubjectList").change(function () {
+            $("#sortForm").submit();
+        });
+    });
+
+    const clearBtn = document.getElementById("clearBtn");
+    const inputArea = document.getElementById("queryFind");
+
+    clearBtn.addEventListener("click", clear)
+
+    function clear() {
+        inputArea.value = "";
+    }
+</script>

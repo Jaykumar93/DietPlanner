@@ -41,6 +41,7 @@ public partial class DietContext : DbContext
     public virtual DbSet<TblUserPost> TblUserPosts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
     { }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -91,6 +92,9 @@ public partial class DietContext : DbContext
             entity.Property(e => e.ChallengeGoals)
                 .IsUnicode(false)
                 .HasColumnName("challenge_goals");
+            entity.Property(e => e.ChallengeImagePath)
+                .IsUnicode(false)
+                .HasColumnName("challenge_image_path");
             entity.Property(e => e.ChallengeName)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -155,6 +159,9 @@ public partial class DietContext : DbContext
             entity.Property(e => e.MealDescription)
                 .IsUnicode(false)
                 .HasColumnName("meal_description");
+            entity.Property(e => e.MealImagePath)
+                .IsUnicode(false)
+                .HasColumnName("meal_image_path");
             entity.Property(e => e.MealName)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -201,6 +208,9 @@ public partial class DietContext : DbContext
             entity.Property(e => e.PlanDescription)
                 .IsUnicode(false)
                 .HasColumnName("plan_description");
+            entity.Property(e => e.PlanImagePath)
+                .IsUnicode(false)
+                .HasColumnName("plan_image_path");
             entity.Property(e => e.PlanName)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -354,6 +364,9 @@ public partial class DietContext : DbContext
             entity.Property(e => e.RewardDescription)
                 .IsUnicode(false)
                 .HasColumnName("reward_description");
+            entity.Property(e => e.RewardImagePath)
+                .IsUnicode(false)
+                .HasColumnName("reward_image_path");
 
             entity.HasOne(d => d.Challenge).WithMany(p => p.TblRewards)
                 .HasForeignKey(d => d.ChallengeId)

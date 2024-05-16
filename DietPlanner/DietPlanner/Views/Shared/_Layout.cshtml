@@ -1,13 +1,14 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/Layout.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body id="body-pd">
@@ -36,7 +37,7 @@
                         <a href="#"><i class="bx bx-help-circle"></i>&nbsp;Help</a>
                     </li>
                     <li>
-                        <a asp-controller="UserManagment" asp-action="Logout"><i class="bx bx-log-out ph-sign-out"></i>&nbsp;Sign Out</a>
+                        <a asp-controller="Auth" asp-action="Logout"><i class="bx bx-log-out ph-sign-out"></i>&nbsp;Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -60,11 +61,11 @@
                         <i class="bx bx-user nav_icon"></i>
                         <span class="nav_name">Users</span>
                     </a>
-                    <a asp-controller="MealPlanner" asp-action="ViewMealPlan" class="nav_link">
+                    <a asp-controller="AdminMealPlanner" asp-action="ViewMealPlan" class="nav_link">
                         <i class="bx bxs-bowl-rice nav_icon"></i>
                         <span class="nav_name">Food Planning</span>
                     </a>
-                    <a asp-controller="Challenges" asp-action="ViewChallenges" class="nav_link">
+                    <a asp-controller="AdminChallenges" asp-action="ViewChallenges" class="nav_link">
                         <i class="bx bxs-trophy nav_icon"></i>
                         <span class="nav_name">Challenges</span>
                     </a>
@@ -99,9 +100,10 @@
     ></script> -->
 
     <script src="~/js/Layout.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Component.InvokeAsync("Notyf")
     @await RenderSectionAsync("Scripts", required: false)
-</body>
+    </body>
 
 </html>

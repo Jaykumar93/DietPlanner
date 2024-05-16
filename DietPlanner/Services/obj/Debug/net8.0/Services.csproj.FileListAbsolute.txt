@@ -15,6 +15,4 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Services\bin\Debug\net8.0\Domain.dll
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Services\bin\Debug\net8.0\Domain.pdb
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Services\obj\Debug\net8.0\Services.csproj.Up2Date
-C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Services\bin\Debug\net8.0\Repository.dll
-C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Services\bin\Debug\net8.0\Repository.pdb
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Services\obj\Debug\net8.0\Services.sourcelink.json

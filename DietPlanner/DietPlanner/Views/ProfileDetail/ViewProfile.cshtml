@@ -1,4 +1,4 @@
-﻿@model Services.DTO.ProfileDetailViewModel
+﻿@model Domain.DTO.ProfileDetailViewModel
 
 
 @{
@@ -86,7 +86,7 @@
         <input asp-for="UserCertification" type="file" class="form-control" readonly />
         <span asp-validation-for="UserCertification" class="text-danger"></span>
     </div>
-    <button asp-controller="User/ProfileDetail" asp-action="UpdateProfile" class="btn btn-primary">Update</button>
+    <button asp-controller="ProfileDetail" asp-action="UpdateProfile" class="btn btn-primary">Update</button>
 </form>
 
 @section scripts {

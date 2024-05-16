@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Domain.DTO.MealPlanViewModel>
+
+@{
+    Layout = "_Layout";
+    var title = "Meal Plan";
+    ViewData["Title"] = title;
+}
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["UnSuccessful"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["UnSuccessful"]
+    </div>
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3><a asp-action="CreateMealPlan" class="btn btn-sm btn-secondary">Create New Meal Plan</a></h3>
+
+<h4> To View Meals: </h4>
+<h3><a asp-controller="AdminMealDetails" asp-action="ViewMeals" class="btn btn-sm btn-secondary">View Meals</a></h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Meal Plan Name</th>
+            <th>Meal Plan Description</th>
+            <th>Breakfast Meal</th>
+            <th>Lunch Meal</th>
+            <th>Dinner Meal</th>
+            <th>Total Calorie Count</th>
+            <th>Vitamins</th>
+            <th>Minerals</th>   
+            <th>Protein</th>
+            <th>Fat</th>
+            <th>Carbohydrates</th>
+            <th>Water</th>
+            <th>Created By</th>
+            <th>Created On</th>
+            <th>Modified By</th>
+            <th>Modifed On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model)
+        {
+            <tr>
+                <td>@plan.PlanName</td>
+                <td>@plan.PlanDescription</td>
+                <td>@plan.BreakfastMealName</td>
+                <td>@plan.LunchMealName</td>
+                <td>@plan.DinnerMealName</td>
+                <td>@plan.TotalCalorieCount</td>
+                <td>@plan.PlanVitamin</td>
+                <td>@plan.PlanMinerals</td>
+                <td>@plan.PlanProtein</td>
+                <td>@plan.PlanFat</td>
+                <td>@plan.PlanCarbohydrates</td>
+                <td>@plan.PlanWater</td>
+                <td>@plan.CreatedBy</td>
+                <td>@plan.CreatedDate</td>
+                <td>@plan.ModifiedBy</td>
+                <td>@plan.ModifiedDate</td>
+               
+                <td>
+                    <a asp-action="UpdateMealPlan" asp-route-PlanName="@plan.PlanName">
+                        <button>Update</button>
+                    </a>
+                </td>
+                <td>
+                    <form asp-action="DeleteMealPlan" method="post" asp-route-PlanName="@plan.PlanName">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

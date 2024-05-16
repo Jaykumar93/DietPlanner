@@ -59,29 +59,45 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "EasyCaching.InMemory": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "EasyCaching.Redis": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Core": {
               "target": "Package",
@@ -164,29 +180,45 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "EasyCaching.InMemory": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "EasyCaching.Redis": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Core": {
               "target": "Package",
@@ -251,6 +283,9 @@
             "projectReferences": {
               "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Services\\Services.csproj"
               }
             }
           }
@@ -270,6 +305,22 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "EasyCaching.InMemory": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "EasyCaching.Redis": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.7.33, )"
@@ -325,9 +376,6 @@
             "projectReferences": {
               "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Domain\\Domain.csproj"
-              },
-              "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\Repository.csproj"
               }
             }
           }
@@ -347,33 +395,49 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "EasyCaching.InMemory": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "EasyCaching.Redis": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             },
             "Microsoft.Extensions.Configuration.UserSecrets": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Core": {
               "target": "Package",

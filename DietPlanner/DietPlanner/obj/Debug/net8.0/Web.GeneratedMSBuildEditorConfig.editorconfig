@@ -26,16 +26,52 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Challenges/CreateChallenge.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbGxlbmdlc1xDcmVhdGVDaGFsbGVuZ2UuY3NodG1s
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminChallenges/CreateChallenge.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5DaGFsbGVuZ2VzXENyZWF0ZUNoYWxsZW5nZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Challenges/UpdateChallenge.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbGxlbmdlc1xVcGRhdGVDaGFsbGVuZ2UuY3NodG1s
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminChallenges/UpdateChallenge.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5DaGFsbGVuZ2VzXFVwZGF0ZUNoYWxsZW5nZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Challenges/ViewChallenges.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbGxlbmdlc1xWaWV3Q2hhbGxlbmdlcy5jc2h0bWw=
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminChallenges/ViewChallenges.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5DaGFsbGVuZ2VzXFZpZXdDaGFsbGVuZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminMealDetails/CreateMeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZWFsRGV0YWlsc1xDcmVhdGVNZWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminMealDetails/UpdateMeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZWFsRGV0YWlsc1xVcGRhdGVNZWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminMealDetails/ViewMeals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZWFsRGV0YWlsc1xWaWV3TWVhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminMealPlanner/CreateMealPlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZWFsUGxhbm5lclxDcmVhdGVNZWFsUGxhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminMealPlanner/UpdateMealPlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZWFsUGxhbm5lclxVcGRhdGVNZWFsUGxhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/AdminMealPlanner/ViewMealPlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZWFsUGxhbm5lclxWaWV3TWVhbFBsYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Auth/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Auth/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Auth/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Home/Index.cshtml]
@@ -48,30 +84,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Home/User.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/CreateMeal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcQ3JlYXRlTWVhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/UpdateMeal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcVXBkYXRlTWVhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealDetails/ViewMeals.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbERldGFpbHNcVmlld01lYWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealPlanner/CreateMealPlan.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5uZXJcQ3JlYXRlTWVhbFBsYW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealPlanner/UpdateMealPlan.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5uZXJcVXBkYXRlTWVhbFBsYW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/MealPlanner/ViewMealPlan.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5uZXJcVmlld01lYWxQbGFuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/ProfileDetail/UpdateProfile.cshtml]
@@ -90,16 +102,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserManagment/ForgotPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnbWVudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserMealPlanner/MealPlans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXE1lYWxQbGFucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserManagment/SignIn.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnbWVudFxTaWduSW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserManagment/SignUp.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnbWVudFxTaWduVXAuY3NodG1s
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserMealPlanner/_GridView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXF9HcmlkVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/_ViewImports.cshtml]

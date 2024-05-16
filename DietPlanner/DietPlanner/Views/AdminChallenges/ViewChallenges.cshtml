@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Domain.DTO.ChallengesRewardViewModel>
+
+@{
+    Layout = "_Layout";
+    var title = "Challenge Detail";
+    ViewData["Title"] = title;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3><a asp-action="CreateChallenge" class="btn btn-sm btn-secondary">Create New Challenge</a></h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Challenge Name</th>
+            <th>Challenge Description</th>
+            <th>Challenge Goals</th>
+            <th>Start Date and time</th>
+            <th>End Date and Time</th>
+            <th>Challenge Status</th>
+            <th>Reward Description</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var challenges in Model)
+        {
+            <tr>
+                <td>@challenges.ChallengeName</td>
+                <td>@challenges.ChallengeDescription</td>
+                <td>@challenges.ChallengeGoals</td>
+                <td>@challenges.StartDatetime</td>
+                <td>@challenges.EndDatetime</td>
+                <td>@challenges.ChallengeStatus</td>
+                <td>@challenges.RewardDescription</td>
+
+                
+                <td>
+                    <a asp-action="UpdateChallenge" asp-route-challengeName="@challenges.ChallengeName">
+                        <button>Update</button>
+                    </a>
+                </td>
+                <td>
+                    <form asp-action="DeleteChallenge" method="post" asp-route-challengeName="@challenges.ChallengeName">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

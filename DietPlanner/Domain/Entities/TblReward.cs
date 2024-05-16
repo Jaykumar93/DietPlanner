@@ -11,6 +11,8 @@ public partial class TblReward
 
     public string RewardDescription { get; set; } = null!;
 
+    public string? RewardImagePath { get; set; }
+
     public virtual TblChallenge Challenge { get; set; } = null!;
 
     public virtual ICollection<TblProfileDetail> TblProfileDetails { get; set; } = new List<TblProfileDetail>();

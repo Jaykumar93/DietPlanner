@@ -60,7 +60,7 @@ profile.onclick = function () {
 $(document).ready(function () {
 
     $.ajax({
-        url: '/UserManagment/LayoutData',
+        url: '/Auth/LayoutData',
         type: 'GET',
         success: function (data) {
 

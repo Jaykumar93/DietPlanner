@@ -14,3 +14,5 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Repository\obj\Debug\net8.0\Repository.pdb
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Repository\obj\Debug\net8.0\ref\Repository.dll
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Repository\obj\Debug\net8.0\Repository.sourcelink.json
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Repository\bin\Debug\net8.0\Services.dll
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\Repository\bin\Debug\net8.0\Services.pdb

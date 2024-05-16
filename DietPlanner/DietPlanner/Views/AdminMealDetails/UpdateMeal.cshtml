@@ -1,0 +1,95 @@
+﻿@model Domain.DTO.MealViewModel
+
+@{
+	Layout = "_Layout";
+	var title = "Update Meal Details";
+	ViewData["Title"] = title;
+}
+
+<style>
+	.input-validation-error {
+		border-color: red;
+	}
+</style>
+
+<h2>@title</h2>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" readonly />
+    </div>
+	<div class="form-group">
+		<label asp-for="MealName"></label>
+        <input asp-for="MealName" class="form-control" readonly />
+	</div>
+	<div class="form-group">
+		<label asp-for="MealDescription"></label>
+		<input asp-for="MealDescription" type="text" class="form-control"  />
+        <span asp-validation-for="MealDescription" class="text-danger"></span>
+	</div>
+    
+    <div class="form-group">
+		<label asp-for="ImagePath"></label>
+        <input asp-for="ImagePath" type="file" class="form-control" />
+        <span asp-validation-for="ImagePath" class="text-danger"></span>
+	</div>
+	@* <div class="form-group">
+		<label asp-for="TypeOfMeal"></label>
+		<div>
+			@Html.RadioButtonFor(m => m.TypeOfMeal, MealType.Breakfast) @MealType.Breakfast
+			@Html.RadioButtonFor(m => m.TypeOfMeal, MealType.Lunch) @MealType.Lunch
+			@Html.RadioButtonFor(m => m.TypeOfMeal, MealType.Dinner) @MealType.Dinner
+		</div>
+	</div> *@
+	<div class="form-group">
+
+        <div class="nutrition-info">
+            <h5>Nutrition Info</h5>
+            <div class="form-group">
+                <label asp-for="CalorieCount"></label>
+                <input asp-for="CalorieCount" type="number" class="form-control" placeholder="Enter the Calorie Count" />
+                <span asp-validation-for="CalorieCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealVitamin"></label>
+                <input asp-for="MealVitamin" type="text" class="form-control" placeholder="Enter the Vitamins" />
+                <span asp-validation-for="MealVitamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealMinerals"></label>
+                <input asp-for="MealMinerals" type="number" class="form-control" placeholder="Enter the Minerals Name" />
+                <span asp-validation-for="MealMinerals" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealProtein"></label>
+                <input asp-for="MealProtein" type="number" class="form-control" placeholder="Enter Protein Count in gms" />
+                <span asp-validation-for="MealProtein" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealFat"></label>
+                <input asp-for="MealFat" type="number" class="form-control" />
+                <span asp-validation-for="MealFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealCarbohydrates"></label>
+                <input asp-for="MealCarbohydrates" type="number" class="form-control" />
+                <span asp-validation-for="MealCarbohydrates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealWater"></label>
+                <input asp-for="MealWater" type="number" class="form-control" />
+                <span asp-validation-for="MealWater" class="text-danger"></span>
+            </div>
+        </div>
+	</div>
+  
+	<button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
