@@ -31,7 +31,7 @@
         width: 550px;
         height: 2.5rem;
         background-color: white;
-        border: 1px solid #90D26D;
+        border: 1px solid #2C7865;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -41,8 +41,8 @@
         outline: 3px solid transparent;
     }
 
-    .search_con .input_con:focus-within {
-            outline: 3px solid #90D26D;
+        .search_con .input_con:focus-within {
+            outline: 3px solid #2C7865;
         }
 
         .search_con .input_con input {
@@ -120,7 +120,7 @@
     }
 
     .form-filter .btn {
-        background-color: #28a745;
+        background-color: #2C7865;
         color: #fff;
     }
 
@@ -156,7 +156,7 @@
     right: 20px;
     top: 10px;
     z-index: 2;
-    color: #E26D5C;
+    color: #2C7865;
     background: #fff;
     border-radius: 50%;
     padding: 10px;
@@ -166,7 +166,7 @@
 
     .card-action:hover {
         color: #fff;
-        background: #E26D5C;
+        background: #2C7865;
         animation: pulse 1.5s infinite;
     }
 

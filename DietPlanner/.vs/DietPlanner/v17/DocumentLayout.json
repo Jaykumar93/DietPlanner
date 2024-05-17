@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\wwwroot\\css\\usermealplanner.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\wwwroot\\css\\usermealplanner.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\controllers\\usermealplannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\controllers\\usermealplannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\wwwroot\\css\\signup.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\wwwroot\\css\\signup.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\views\\usermealplanner\\mealplans.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\wwwroot\\css\\loginregistration.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\wwwroot\\css\\loginregistration.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\dietplanner\\views\\usermealplanner\\mealplans.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\views\\usermealplanner\\mealplans.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\views\\usermealplanner\\mealinfodetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\views\\usermealplanner\\mealinfodetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\dietplanner\\controllers\\usermealplannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\controllers\\usermealplannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +50,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Program.cs",
+              "RelativeDocumentMoniker": "DietPlanner\\Program.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Program.cs",
+              "RelativeToolTip": "DietPlanner\\Program.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwB8AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T12:23:50.338Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -46,52 +84,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Program.cs",
-              "RelativeDocumentMoniker": "DietPlanner\\Program.cs",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Program.cs",
-              "RelativeToolTip": "DietPlanner\\Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwB8AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T12:23:50.338Z",
+              "DocumentIndex": 2,
+              "Title": "LoginRegistration.css",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\LoginRegistration.css",
+              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\LoginRegistration.css",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\LoginRegistration.css",
+              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\LoginRegistration.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-17T10:28:40.272Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserMealPlanner.css",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
-              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
-              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Title": "SignUp.css",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\SignUp.css",
+              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\SignUp.css",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\SignUp.css",
+              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\SignUp.css",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAAAJIAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-16T07:20:22.492Z",
+              "WhenOpened": "2024-05-17T10:28:35.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.css",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\Index.css",
+              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\Index.css",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\Index.css",
+              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\Index.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-17T10:27:43.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-17T10:27:40.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Layout.css",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\Layout.css",
+              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\Layout.css",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\Layout.css",
+              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\Layout.css",
+              "ViewState": "AQIAANsAAAAAAAAAAAAAAKoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-17T10:26:35.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserMealPlanner.css",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
+              "RelativeDocumentMoniker": "DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
+              "RelativeToolTip": "DietPlanner\\wwwroot\\css\\UserMealPlanner.css",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAAAHYAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-17T09:56:33.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MealInfoDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserMealPlanner\\MealInfoDetails.cshtml",
+              "RelativeDocumentMoniker": "DietPlanner\\Views\\UserMealPlanner\\MealInfoDetails.cshtml",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserMealPlanner\\MealInfoDetails.cshtml",
+              "RelativeToolTip": "DietPlanner\\Views\\UserMealPlanner\\MealInfoDetails.cshtml",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAkwHwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-17T04:35:43.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MealPlans.cshtml",
               "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserMealPlanner\\MealPlans.cshtml",
               "RelativeDocumentMoniker": "DietPlanner\\Views\\UserMealPlanner\\MealPlans.cshtml",
               "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserMealPlanner\\MealPlans.cshtml",
               "RelativeToolTip": "DietPlanner\\Views\\UserMealPlanner\\MealPlans.cshtml",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAADsAAAAOAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAACMAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-16T07:13:30.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "UserMealPlannerController.cs",
               "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\UserMealPlannerController.cs",
               "RelativeDocumentMoniker": "DietPlanner\\Controllers\\UserMealPlannerController.cs",
               "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\UserMealPlannerController.cs",
               "RelativeToolTip": "DietPlanner\\Controllers\\UserMealPlannerController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCUAAAAhAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAD4vyYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-15T03:49:44.626Z",
               "EditorCaption": ""

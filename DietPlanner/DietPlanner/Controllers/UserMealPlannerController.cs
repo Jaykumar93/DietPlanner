@@ -76,19 +76,14 @@ namespace Web.Controllers.User
 
             if (maxCalorie.HasValue)
             {
-                mealDetails = mealDetails.Where(meal => meal.CalorieCount >= maxCalorie.Value);
+                mealDetails = mealDetails.Where(meal => meal.CalorieCount <= maxCalorie.Value);
             }
             switch (orderBy)
             {
                 case "meal_name_desc":
                     mealDetails = mealDetails.OrderByDescending(meal => meal.MealName);
                     break;
-                case "user_name_desc":
-                    mealDetails = mealDetails.OrderByDescending(meal => meal.UserName);
-                    break;
-                case "user_name":
-                    mealDetails = mealDetails.OrderBy(meal => meal.UserName);
-                    break;
+      
                 case "calorie_count_desc":
                     mealDetails = mealDetails.OrderByDescending(meal => meal.CalorieCount);
                     break;
@@ -126,7 +121,30 @@ namespace Web.Controllers.User
             return View();   
         }
 
-        
+        public ActionResult MealInfoDetails(string mealName)
+        {
+            var mealdetail = _context.TblMeals.Where(meal => meal.MealName == mealName).FirstOrDefault();
+            Dictionary<string, string> nutritionInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(mealdetail.NutritionInfo);
+
+            MealViewModel mealmodel = new MealViewModel
+            {
+                UserName = mealdetail.CreatedBy,
+                MealName = mealdetail.MealName,
+                MealDescription = mealdetail.MealDescription,
+                TypeOfMeal = (MealViewModel.MealType)Enum.Parse(typeof(MealViewModel.MealType), mealdetail.MealType),
+                CalorieCount = int.Parse(nutritionInfo.GetValueOrDefault("CalorieCount", "0")),
+                MealVitamin = nutritionInfo.GetValueOrDefault("MealVitamin", "None"),
+                MealMinerals = nutritionInfo.GetValueOrDefault("MealMinerals", "None"),
+                MealProtein = int.Parse(nutritionInfo.GetValueOrDefault("MealProtein", "0")),
+                MealFat = int.Parse(nutritionInfo.GetValueOrDefault("MealFat", "0")),
+                MealCarbohydrates = int.Parse(nutritionInfo.GetValueOrDefault("MealCarbohydrates", "0")),
+                MealWater = int.Parse(nutritionInfo.GetValueOrDefault("MealWater", "0")),
+                Imglocation = mealdetail.MealImagePath
+
+            };
+            return PartialView("MealInfoDetails",mealmodel);
+        }
+            
     }
 }
 
