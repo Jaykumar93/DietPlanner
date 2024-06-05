@@ -11,6 +11,7 @@
     <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
     <PackageReference Include="EasyCaching.InMemory" Version="1.9.2" />
     <PackageReference Include="EasyCaching.Redis" Version="1.9.2" />
+    <PackageReference Include="FullCalendar" Version="3.9.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
@@ -26,6 +27,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Core" Version="8.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     <PackageReference Include="StackExchange.Redis" Version="2.7.33" />
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="25.2.6" />
+    <PackageReference Include="Syncfusion.Licensing" Version="25.2.6" />
   </ItemGroup>
 
   <ItemGroup>

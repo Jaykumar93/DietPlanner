@@ -71,6 +71,10 @@
               "target": "Package",
               "version": "[1.9.2, )"
             },
+            "FullCalendar": {
+              "target": "Package",
+              "version": "[3.9.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.5, )"
@@ -110,6 +114,14 @@
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.7.33, )"
+            },
+            "Syncfusion.EJ2.AspNet.Core": {
+              "target": "Package",
+              "version": "[25.2.6, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[25.2.6, )"
             }
           },
           "imports": [

@@ -11,6 +11,7 @@ using EasyCaching.Core.Configurations;
 using System.Configuration;
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
+using Domain.DTO;
 
 
 namespace DietPlanner
@@ -40,6 +41,9 @@ namespace DietPlanner
             builder.Services.AddScoped<Services.Upload>();
             builder.Services.AddScoped<MealInfoSummarize>();
             builder.Services.AddScoped<MealDetailRepository>();
+            builder.Services.AddScoped<ChallengesRewardRepository>();
+            builder.Services.AddScoped<ProfileDetailRepository>();
+            builder.Services.AddScoped<MealPlanRepository>();
 
             builder.Services.AddControllersWithViews();
             

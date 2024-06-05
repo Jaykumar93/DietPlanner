@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Repository;
 using Services.AuthServices;
 using Domain.DTO;
 using System.IdentityModel.Tokens.Jwt;
@@ -20,7 +21,7 @@ namespace Web.Controllers
         private readonly Validation _validation;
         private readonly INotyfService _notyf;
 
-        public AuthController(Domain.Data.DietContext context,IConfiguration config,Validation validation, INotyfService notyf)
+        public AuthController(Domain.Data.DietContext context, IConfiguration config, Validation validation, INotyfService notyf)
         {
             _context = context;
             _config = config;
@@ -28,7 +29,7 @@ namespace Web.Controllers
             _notyf = notyf;
         }
 
-
+        [HttpGet]
         public IActionResult SignIn()
         {
             return View();
@@ -53,12 +54,10 @@ namespace Web.Controllers
 
                 if (encryptedPass == userInfo.PasswordHash)
                 {
-                  
-
-                    var roleName = _context.TblRoles.Where(role=>role.RoleId == profileInfo.RoleId).Select(role=>role.RoleName).FirstOrDefault();
+                    var roleName = _context.TblRoles.Where(role => role.RoleId == profileInfo.RoleId).Select(role => role.RoleName).FirstOrDefault();
                     var token = Authorization.GetJWTToken(login, _config, roleName);
 
-                    
+
                     var cookieOptions = new CookieOptions
                     {
                         HttpOnly = true,
@@ -68,8 +67,8 @@ namespace Web.Controllers
                     HttpContext.Response.Cookies.Append("JwtToken", token, cookieOptions);
 
                     _notyf.Success("You have successfully logged In");
-                    
-                    return RedirectToAction("Index", "Home");
+
+                    return RedirectToAction("DashboardRedirection", "RoleBasedRedirection");
                 }
                 else
                 {
@@ -87,7 +86,7 @@ namespace Web.Controllers
             }
         }
 
-
+        [HttpGet]
         public IActionResult SignUp()
         {
             return View();
@@ -143,7 +142,7 @@ namespace Web.Controllers
 
             };
 
-             await _context.TblProfileDetails.AddAsync(profile);
+            await _context.TblProfileDetails.AddAsync(profile);
             await _context.SaveChangesAsync();
 
             _notyf.Success("Registered Successfully");
@@ -159,19 +158,7 @@ namespace Web.Controllers
         }
 
 
-        public async Task<IActionResult> ForgotPassword()
-        {
-            
-            return View();
-        
-        }
-        [HttpPost]
-        public async Task<IActionResult> ForgotPassword(LoginModel model)
-        {
-            
-            return View();
-        
-        }
+       
 
         public async Task<IActionResult> LayoutData()
         {

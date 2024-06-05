@@ -1,32 +1,19 @@
-﻿using Domain.Entities;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.DTO;
+using System.Security.Claims;
+
 
 namespace Repository.Interfaces
 {
     public interface IMealPlanRepository
     {
-        public bool AddMealPlan(TblMealPlan tblMealPlan);
+        public IEnumerable<MealPlanViewModel> GetAllMealPlans();
 
-        public List<TblMealPlan> GetAllMealPlan();
+        public Task<bool> CreateMealPlans(MealPlanViewModel model, IEnumerable<Claim> claims);
 
-        public TblMealPlan GetMealPlan(string mealPlanName);
+        public Task<bool> UpdateMealPlans(MealPlanViewModel model, IEnumerable<Claim> claims);
 
-        public bool UpdateMealPlan(TblMealPlan mealPlan);
-
-
-
-        public bool DeleteMealPlan(string mealPlanName);
+        public Task<bool> DeleteMealPlans(string planName);
         
-
-
-        public bool Save();
 
     }
 }

@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Domain.DTO.ActivityTrackingViewModel>
+
+@{
+    Layout = "_Layout";
+    var title = "Activity OverView";
+    ViewData["Title"] = title;
+}
+
+<link href="~/css/UserActivity.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="title-container">
+        <h1>@ViewData["Title"]</h1>
+        <div class="button-container">
+            <h3><a asp-action="AddActivity" class="btn btn-sm btn-secondary">Add New Activity</a></h3>
+            <h3><a asp-action="ViewActivityDetails" class="btn btn-sm btn-secondary">View Activity Details</a></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card p-3 shadow-sm mb-4">
+                <div id="chartContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card p-3 shadow-sm">
+                <h4 class="mb-3">Activity Details</h4>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Activity Type</th>
+                            <th>Intensity</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var activity in Model)
+                        {
+                            <tr>
+                                <td>@activity.ActivityType</td>
+                                <td>@activity.ActivityIntensity</td>
+                                <td>@activity.CalorieBurned</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card p-3 shadow-sm mb-4">
+                <div id="donutContainer"></div>
+            </div>
+            <div class="card p-3 shadow-sm">
+                <div id="activityContainer" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        window.onload = function () {
+            var chartData = @Html.Raw(ViewBag.Data);
+            chartData = chartData.map(dataPoint => ({
+                x: new Date(dataPoint.x),
+                y: dataPoint.y
+            }));
+
+            // Donut chart data
+            var donutData = @Html.Raw(ViewBag.IntensityData);
+
+            // Rendering line chart
+            var lineChart = new CanvasJS.Chart("chartContainer", {
+
+                title: {
+                    text: "Activity End Datetime vs Calories Burned"
+                },
+                data: [{
+                    type: "line",
+                    dataPoints: chartData
+                }]
+            });
+            lineChart.render();
+
+            // Rendering donut chart
+            var donutChart = new CanvasJS.Chart("donutContainer", {
+
+                title: {
+                    text: "Activity Intensity vs Total Calories Burned"
+                },
+                data: [{
+                    type: "doughnut",
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label}: {y}",
+                    dataPoints: donutData.map(d => ({ label: d.Intensity, y: d.TotalCalories }))
+                }]
+            });
+            donutChart.render();
+
+            // Bar chart data
+            var ActivityData = @Html.Raw(ViewBag.ActivityData);
+            var barChart = new CanvasJS.Chart("activityContainer", {
+
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: "light1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Activity Type vs Total Calories Burned"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{
+                    type: "column",
+                    indexLabelFontColor: "#5A5757",
+                    indexLabelFontSize: 16,
+                    indexLabelPlacement: "outside",
+                    dataPoints: ActivityData.map(d => ({ label: d.ActivityType, y: d.TotalCalories }))
+                }]
+            });
+            barChart.render();
+        }
+    </script>
+}

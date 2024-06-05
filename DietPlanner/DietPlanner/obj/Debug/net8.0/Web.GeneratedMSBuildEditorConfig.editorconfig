@@ -86,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/Home/ViewUserMealPlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3VXNlck1lYWxQbGFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/ProfileDetail/UpdateProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZURldGFpbFxVcGRhdGVQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,6 +106,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserActivityTracking/AddActivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFjdGl2aXR5VHJhY2tpbmdcQWRkQWN0aXZpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserActivityTracking/UpdateActivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFjdGl2aXR5VHJhY2tpbmdcVXBkYXRlQWN0aXZpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserActivityTracking/UserActivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFjdGl2aXR5VHJhY2tpbmdcVXNlckFjdGl2aXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserActivityTracking/ViewActivityDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFjdGl2aXR5VHJhY2tpbmdcVmlld0FjdGl2aXR5RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserChallenges/ChallengeDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNoYWxsZW5nZXNcQ2hhbGxlbmdlRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserChallenges/ChallengeInfoDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNoYWxsZW5nZXNcQ2hhbGxlbmdlSW5mb0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserMealPlanner/MealInfoDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXE1lYWxJbmZvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -110,8 +138,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXE1lYWxQbGFucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserMealPlanner/_GridView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXF9HcmlkVmlldy5jc2h0bWw=
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserMealPlanner/PlanDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXFBsYW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/UserMealPlanner/PlanInfoDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1lYWxQbGFubmVyXFBsYW5JbmZvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Coditas-Admin/Documents/Diet Planning Project/Main/DietApp/DietPlanner/DietPlanner/Views/_ViewImports.cshtml]

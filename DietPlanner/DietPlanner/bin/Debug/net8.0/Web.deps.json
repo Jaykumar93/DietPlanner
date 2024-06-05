@@ -12,6 +12,7 @@
           "Domain": "1.0.0",
           "EasyCaching.InMemory": "1.9.2",
           "EasyCaching.Redis": "1.9.2",
+          "fullcalendar": "3.9.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.5",
           "Microsoft.EntityFrameworkCore": "8.0.5",
           "Microsoft.EntityFrameworkCore.Design": "8.0.5",
@@ -22,7 +23,9 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
           "Repository": "1.0.0",
           "Services": "1.0.0",
-          "StackExchange.Redis": "2.7.33"
+          "StackExchange.Redis": "2.7.33",
+          "Syncfusion.EJ2.AspNet.Core": "25.2.6",
+          "Syncfusion.Licensing": "25.2.6"
         },
         "runtime": {
           "Web.dll": {}
@@ -112,6 +115,12 @@
             "assemblyVersion": "1.9.2.0",
             "fileVersion": "1.9.2.0"
           }
+        }
+      },
+      "fullcalendar/3.9.0": {
+        "dependencies": {
+          "Moment.js": "2.9.0",
+          "jQuery": "2.0.0"
         }
       },
       "Humanizer/2.14.1": {
@@ -654,6 +663,7 @@
           }
         }
       },
+      "jQuery/2.0.0": {},
       "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.5": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.1.2"
@@ -1638,6 +1648,7 @@
           }
         }
       },
+      "Moment.js/2.9.0": {},
       "Mono.TextTemplating/2.3.1": {
         "dependencies": {
           "System.CodeDom": "5.0.0"
@@ -1777,6 +1788,26 @@
           "lib/net6.0/StackExchange.Redis.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.7.33.41805"
+          }
+        }
+      },
+      "Syncfusion.EJ2.AspNet.Core/25.2.6": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "Syncfusion.Licensing": "25.2.6"
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.EJ2.dll": {
+            "assemblyVersion": "25.2.6.0",
+            "fileVersion": "25.2.6.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/25.2.6": {
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "25.2.6.0",
+            "fileVersion": "25.2.6.0"
           }
         }
       },
@@ -2136,6 +2167,13 @@
       "path": "easycaching.redis/1.9.2",
       "hashPath": "easycaching.redis.1.9.2.nupkg.sha512"
     },
+    "fullcalendar/3.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lx1CYPPY8AGVtkDHKl+gjVjD2SKGBi3WC+gEU/qn848HRnO/po3KurcYoblr1Yyp6Iia8kXffYZy62adAHNj+A==",
+      "path": "fullcalendar/3.9.0",
+      "hashPath": "fullcalendar.3.9.0.nupkg.sha512"
+    },
     "Humanizer/2.14.1": {
       "type": "package",
       "serviceable": true,
@@ -2485,6 +2523,13 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "jQuery/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u3YiE0QnFnBExPkBPqWr2EVd8nh01iQlMWPRfa7b1fQ53YuMtHw+Y9oaJukHtEHaMpyL0PJzq69y3/5AxWogGA==",
+      "path": "jquery/2.0.0",
+      "hashPath": "jquery.2.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.5": {
       "type": "package",
@@ -2948,6 +2993,13 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
+    "Moment.js/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4rhbvFzmgXp/gjvwjxt9Qjmdz+2CD9T99erXEDtZHlYxaI06F9A4628/Vpxklm8D9RmwJjKjp1244FwEh+a5WQ==",
+      "path": "moment.js/2.9.0",
+      "hashPath": "moment.js.2.9.0.nupkg.sha512"
+    },
     "Mono.TextTemplating/2.3.1": {
       "type": "package",
       "serviceable": true,
@@ -3038,6 +3090,20 @@
       "sha512": "sha512-2kCX5fvhEE824a4Ab5Imyi8DRuGuTxyklXV01kegkRpsWJcPmO6+GAQ+HegKxvXAxlXZ8yaRspvWJ8t3mMClfQ==",
       "path": "stackexchange.redis/2.7.33",
       "hashPath": "stackexchange.redis.2.7.33.nupkg.sha512"
+    },
+    "Syncfusion.EJ2.AspNet.Core/25.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M4ltLrdir21KNQx6Rhh3CXw734Nk0wPb+bO+bKqX9H6DOrsH+hMASiBhTXWpDCbZyscT0gkE1JrVuYkW54OReQ==",
+      "path": "syncfusion.ej2.aspnet.core/25.2.6",
+      "hashPath": "syncfusion.ej2.aspnet.core.25.2.6.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/25.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3Jx4B5TIczAC6LRLZDTB/02+k+sTInoGLrEUZSJPE5QDpiwVp4aPCBh6trcTsmD8I2hp2Pz+w+LSwvmoAKeTmw==",
+      "path": "syncfusion.licensing/25.2.6",
+      "hashPath": "syncfusion.licensing.25.2.6.nupkg.sha512"
     },
     "System.CodeDom/5.0.0": {
       "type": "package",

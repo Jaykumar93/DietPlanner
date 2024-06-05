@@ -1,0 +1,97 @@
+﻿ 
+<link href="~/css/ViewUserMealPlan.css" rel="stylesheet" />
+
+
+<div id="carousel-wrapper">
+    <div id="menu">
+        <div id="current-option">
+            <a id="current-option-permalink" href=""><span id="current-option-text1" data-previous-text="" data-next-text=""></span></a>
+            <span id="current-option-text2" data-previous-text="" data-next-text=""></span>
+        </div>
+        <div id="image"></div>
+    </div>
+
+    <button id="previous-option"></button>
+    <button id="next-option"></button>
+</div>
+
+@{
+    var mealDetailsJson = ViewBag.MealDetailsJson ?? "[]";
+}
+
+<script>
+    const mealDetails = @Html.Raw(mealDetailsJson);
+
+    const text1_options = mealDetails.map(detail => detail.ModelName);
+    const text2_options = mealDetails.map(detail => detail.ModelDescription);
+    const color_options = ['#FFC312', '#F79F1F', '#C4E538', '#A3CB38', '#12CBC4']; // Add more colors if needed
+    const image_options = mealDetails.map(detail => detail.ModelImage);
+    const permalink_options = mealDetails.map(detail => '#'); // Replace with actual permalinks if available
+
+    var i = 0;
+    const currentOptionText1 = document.getElementById("current-option-text1");
+    const currentOptionText2 = document.getElementById("current-option-text2");
+    const currentOptionImage = document.getElementById("image");
+    const currentOptionPermalink = document.getElementById("current-option-permalink");
+
+    const carousel = document.getElementById("carousel-wrapper");
+    const mainMenu = document.getElementById("menu");
+    const optionPrevious = document.getElementById("previous-option");
+    const optionNext = document.getElementById("next-option");
+
+    currentOptionText1.innerText = text1_options[i];
+    currentOptionText2.innerText = text2_options[i];
+    currentOptionImage.style.backgroundImage = `url('${image_options[i]}')`;
+    currentOptionPermalink.href = permalink_options[i];
+    mainMenu.style.background = color_options[i];
+
+    function showNextOption() {
+        i = (i + 1) % text1_options.length;
+        currentOptionText1.dataset.nextText = text1_options[i];
+        currentOptionText2.dataset.nextText = text2_options[i];
+        mainMenu.style.background = color_options[i];
+        carousel.classList.add("anim-next");
+
+        setTimeout(() => {
+            currentOptionImage.style.backgroundImage = `url('${image_options[i]}')`;
+        }, 455);
+
+        setTimeout(() => {
+            currentOptionText1.innerText = text1_options[i];
+            currentOptionText2.innerText = text2_options[i];
+            currentOptionPermalink.href = permalink_options[i];
+            carousel.classList.remove("anim-next");
+        }, 650);
+    }
+
+    function showPreviousOption() {
+        if (i === 0) {
+            i = text1_options.length;
+        }
+        i = (i - 1) % text1_options.length;
+        currentOptionText1.dataset.previousText = text1_options[i];
+        currentOptionText2.dataset.previousText = text2_options[i];
+        mainMenu.style.background = color_options[i];
+        carousel.classList.add("anim-previous");
+
+        setTimeout(() => {
+            currentOptionImage.style.backgroundImage = `url('${image_options[i]}')`;
+        }, 455);
+
+        setTimeout(() => {
+            currentOptionText1.innerText = text1_options[i];
+            currentOptionText2.innerText = text2_options[i];
+            currentOptionPermalink.href = permalink_options[i];
+            carousel.classList.remove("anim-previous");
+        }, 650);
+    }
+
+    optionNext.onclick = showNextOption;
+    optionPrevious.onclick = showPreviousOption;
+
+    // Auto-scroll functionality
+    const autoScrollInterval = 3000; // Adjust the interval as needed (milliseconds)
+    setInterval(showNextOption, autoScrollInterval);
+
+   
+</script>

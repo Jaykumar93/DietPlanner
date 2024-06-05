@@ -15,10 +15,6 @@ public partial class TblProfileDetail
 
     public Guid? MealPlanId { get; set; }
 
-    public Guid? ChallengeId { get; set; }
-
-    public Guid? RewardId { get; set; }
-
     public string? UserSpeciality { get; set; }
 
     public string? UserCertification { get; set; }
@@ -33,15 +29,13 @@ public partial class TblProfileDetail
 
     public string? UserGoals { get; set; }
 
-    public virtual TblChallenge? Challenge { get; set; }
-
     public virtual TblMealPlan? MealPlan { get; set; }
-
-    public virtual TblReward? Reward { get; set; }
 
     public virtual TblRole Role { get; set; } = null!;
 
     public virtual ICollection<TblActivityTracking> TblActivityTrackings { get; set; } = new List<TblActivityTracking>();
+
+    public virtual ICollection<TblChallengesRewardsLog> TblChallengesRewardsLogs { get; set; } = new List<TblChallengesRewardsLog>();
 
     public virtual ICollection<TblConsultation> TblConsultationExpertProfiles { get; set; } = new List<TblConsultation>();
 

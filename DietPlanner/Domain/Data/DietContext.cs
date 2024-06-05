@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Domain.Entities;
 
 namespace Domain.Data;
 
@@ -19,6 +19,8 @@ public partial class DietContext : DbContext
     public virtual DbSet<TblActivityTracking> TblActivityTrackings { get; set; }
 
     public virtual DbSet<TblChallenge> TblChallenges { get; set; }
+
+    public virtual DbSet<TblChallengesRewardsLog> TblChallengesRewardsLogs { get; set; }
 
     public virtual DbSet<TblConsultation> TblConsultations { get; set; }
 
@@ -41,8 +43,8 @@ public partial class DietContext : DbContext
     public virtual DbSet<TblUserPost> TblUserPosts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-
     { }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<TblActivityTracking>(entity =>
@@ -109,6 +111,40 @@ public partial class DietContext : DbContext
             entity.Property(e => e.StartDatetime)
                 .HasColumnType("datetime")
                 .HasColumnName("start_datetime");
+        });
+
+        modelBuilder.Entity<TblChallengesRewardsLog>(entity =>
+        {
+            entity.HasKey(e => e.ChallengeLogId).HasName("PK__tbl_Chal__56A589DF1F82ED63");
+
+            entity.ToTable("tbl_ChallengesRewards_log");
+
+            entity.Property(e => e.ChallengeLogId)
+                .HasDefaultValueSql("(newid())")
+                .HasColumnName("challenge_log_id");
+            entity.Property(e => e.ChallengeId).HasColumnName("challenge_id");
+            entity.Property(e => e.ProfileId).HasColumnName("profile_id");
+            entity.Property(e => e.RewardId).HasColumnName("reward_id");
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
+                .HasColumnName("status");
+            entity.Property(e => e.StatusDatetime)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("status_datetime");
+
+            entity.HasOne(d => d.Challenge).WithMany(p => p.TblChallengesRewardsLogs)
+                .HasForeignKey(d => d.ChallengeId)
+                .HasConstraintName("FK__tbl_Chall__chall__23BE4960");
+
+            entity.HasOne(d => d.Profile).WithMany(p => p.TblChallengesRewardsLogs)
+                .HasForeignKey(d => d.ProfileId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__tbl_Chall__profi__22CA2527");
+
+            entity.HasOne(d => d.Reward).WithMany(p => p.TblChallengesRewardsLogs)
+                .HasForeignKey(d => d.RewardId)
+                .HasConstraintName("FK__tbl_Chall__rewar__24B26D99");
         });
 
         modelBuilder.Entity<TblConsultation>(entity =>
@@ -293,13 +329,11 @@ public partial class DietContext : DbContext
             entity.Property(e => e.ProfileId)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("profile_id");
-            entity.Property(e => e.ChallengeId).HasColumnName("challenge_id");
             entity.Property(e => e.ImagePath)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("image_path");
             entity.Property(e => e.MealPlanId).HasColumnName("meal_plan_id");
-            entity.Property(e => e.RewardId).HasColumnName("reward_id");
             entity.Property(e => e.RoleId).HasColumnName("role_id");
             entity.Property(e => e.UserCalorieLimit)
                 .HasMaxLength(50)
@@ -328,17 +362,9 @@ public partial class DietContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("user_weight");
 
-            entity.HasOne(d => d.Challenge).WithMany(p => p.TblProfileDetails)
-                .HasForeignKey(d => d.ChallengeId)
-                .HasConstraintName("FK__tbl_profi__chall__67A95F59");
-
             entity.HasOne(d => d.MealPlan).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.MealPlanId)
                 .HasConstraintName("FK__tbl_profi__meal___66B53B20");
-
-            entity.HasOne(d => d.Reward).WithMany(p => p.TblProfileDetails)
-                .HasForeignKey(d => d.RewardId)
-                .HasConstraintName("FK__tbl_profi__rewar__689D8392");
 
             entity.HasOne(d => d.Role).WithMany(p => p.TblProfileDetails)
                 .HasForeignKey(d => d.RoleId)

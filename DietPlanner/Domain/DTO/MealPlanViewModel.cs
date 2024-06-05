@@ -20,8 +20,7 @@ namespace Domain.DTO
 
         public string? DinnerMealName { get; set; }
 
-        public int TotalCalorieCount { get; set; }
-
+        public int PlanCalorieCount { get; set; }
         public string PlanVitamin { get; set; } = null!;
         public string PlanMinerals { get; set; } = null!;
         public int PlanProtein { get; set; }
@@ -29,6 +28,8 @@ namespace Domain.DTO
         public int PlanCarbohydrates { get; set; }
         public int PlanWater { get; set; }
         public IFormFile? ImagePath { get; set; }
+
+        public string ImageLocation {  get; set; }
         public string CreatedBy { get; set; } = null!;
 
         public DateOnly CreatedDate { get; set; }

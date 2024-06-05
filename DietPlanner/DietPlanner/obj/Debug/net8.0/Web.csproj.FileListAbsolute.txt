@@ -272,3 +272,5 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\AspNetCoreHero.ToastNotification.Views.dll
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\AspNetCoreHero.ToastNotification.dll
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Syncfusion.EJ2.dll
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Syncfusion.Licensing.dll

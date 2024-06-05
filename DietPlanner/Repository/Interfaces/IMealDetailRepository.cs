@@ -1,4 +1,8 @@
-﻿using Domain.Entities;
+﻿using Domain.DTO;
+using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Services;
 
 
 namespace Repository.Interfaces
@@ -6,16 +10,15 @@ namespace Repository.Interfaces
     public interface IMealDetailRepository
     {
 
+        public IEnumerable<MealViewModel> GetAllMeals();
+
+        public MealViewModel GetMealByMealname(string mealName);
+
+        public Task<bool> AddMealDetails(MealViewModel model);
+
+        public Task<bool> UpdateMeal(MealViewModel model);
+
+        public Task<bool> DeleteMealDetail(string mealName);
         
-       
-        public bool PostMealDetails(TblMeal tblMealPlan);
-
-        public TblMeal GetMealDetails(string mealName);
-
-        public List<TblMeal> GetAllMealDetails();
-
-        public bool DeleteMealDetails(string mealName);
-
-        public bool UpdateMealDetails(TblMeal meal);
     }
 }

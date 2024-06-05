@@ -5,14 +5,15 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Domain.DTO;
+using Domain.Data;
 namespace Services.AuthServices
 {
     public class Authorization
     {
-        private readonly Domain.Data.DietContext _context;
+        private readonly DietContext _context;
         private readonly Configuration _config;
 
-        public Authorization(Domain.Data.DietContext context, Configuration config) 
+        public Authorization(DietContext context, Configuration config) 
         {
             _context = context;
             _config = config;
@@ -52,6 +53,5 @@ namespace Services.AuthServices
         }
 
        
-        
     }
 }

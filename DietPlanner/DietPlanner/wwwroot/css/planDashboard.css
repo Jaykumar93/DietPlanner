@@ -1,0 +1,273 @@
+﻿@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.search_con {
+    padding: 1rem 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+    .search_con .input_con {
+        margin: auto;
+        width: 550px;
+        height: 2.5rem;
+        background-color: white;
+        border: 1px solid #2C7865;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        border-radius: 9999px;
+        transition: all 0.2s ease;
+        outline: 3px solid transparent;
+    }
+
+        .search_con .input_con:focus-within {
+            outline: 3px solid #2C7865;
+        }
+
+        .search_con .input_con input {
+            padding: 0 0.5rem 0 1rem;
+            width: 100%;
+            font-size: 15px;
+            color: #1d1d1d;
+            font-family: sans-serif;
+        }
+
+        .search_con .input_con span {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+            .search_con .input_con span .bi {
+                padding: 0 0.5rem;
+                color: #1d1d1d;
+                font-size: 15px;
+                line-height: 2.5rem;
+                cursor: pointer;
+                color: rgba(0, 0, 0, 0.733);
+            }
+
+                .search_con .input_con span .bi:hover {
+                    color: #90D26D;
+                }
+
+            .search_con .input_con span .bi-search {
+                padding-right: 1rem;
+            }
+
+        .search_con .input_con .h-line {
+            height: 50%;
+            width: 1px;
+            background-color: #1d1d1d;
+        }
+
+/* Style for the sort form */
+.form-sort {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+    .form-sort label {
+        font-weight: bold;
+    }
+
+    .form-sort select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+/* Style for the filter form */
+.form-filter {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+    .form-filter label {
+        font-weight: bold;
+    }
+
+    .form-filter input[type="number"] {
+        width: calc(50% - 10px);
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+    }
+
+    .form-filter .btn {
+        background-color: #2C7865;
+        color: #fff;
+    }
+
+.container {
+    display: flex; /* Enable Flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between items */
+}
+
+.profile-card-4 {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: space-between; /* Space items evenly */
+    width: 325px; /* Fixed width */
+    height: 650px; /* Fixed height */
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+}
+
+    .profile-card-4 img {
+        width: 100%;
+        height: 300px; /* Fixed height for the image */
+        align-items:center;
+        justify-content:center;
+        object-fit: cover; /* Ensure the image covers the container */
+        transition: all 0.25s linear;
+    }
+
+    .profile-card-4 .profile-content {
+        flex: 1; /* Allow content to grow */
+        display: flex; /* Enable Flexbox */
+        flex-direction: column; /* Arrange children vertically */
+        justify-content: space-between; /* Space items evenly */
+        padding: 15px;
+        background-color: #FFF;
+    }
+
+    .profile-card-4 .profile-name {
+        font-weight: bold;
+        position: relative;
+        left: 0px;
+        right: 0px;
+        top: 0;
+        color: black;
+        font-size: 17px;
+    }
+
+        .profile-card-4 .profile-name p {
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+        }
+
+    .profile-card-4 .profile-description {
+        color: #777;
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profile-card-4 .profile-overview {
+        padding: 15px 0px;
+        text-align: center;
+        flex: 1; /* Ensure equal width for each overview section */
+    }
+
+        .profile-card-4 .profile-overview p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #777;
+        }
+
+        .profile-card-4 .profile-overview h4 {
+            color: #273751;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+    .profile-card-4 .profile-content::before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        top: -10px;
+        left: 0px;
+        right: 0px;
+        background-color: #FFF;
+        z-index: 0;
+        transform: skewY(3deg);
+    }
+
+    .profile-card-4:hover img {
+        transform: rotate(5deg) scale(1.1, 1.1);
+        
+    }
+
+    /* Flexbox properties for the row and col-xs-4 classes */
+    .profile-card-4 .row {
+        display: flex; /* Enable Flexbox for the row */
+        justify-content: space-between; /* Space items evenly */
+    }
+
+    .profile-card-4 .col-xs-4 {
+        flex: 1; /* Allow each column to grow equally */
+        padding: 0 5px; /* Optional: Add some padding between columns */
+    }
+
+    /* Button styling */
+    .profile-card-4 .btn-plan {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #2C7865;
+        color: white;
+        border: none;
+        border-radius: 0 0 5px 5px; /* Match border radius of card */
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .profile-card-4 .btn-plan:hover {
+            background-color: #235a4d;
+        }
+
+.card-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #2C7865;
+    color: #fff;
+    border: none;
+    border-radius: 0 0 5px 5px; /* Matches border radius of the card */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+    .card-button:hover {
+        background-color: #1D3461;
+        color: #fff;
+    }

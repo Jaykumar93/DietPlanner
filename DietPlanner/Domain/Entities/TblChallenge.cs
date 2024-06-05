@@ -17,11 +17,11 @@ public partial class TblChallenge
 
     public string ChallengeGoals { get; set; } = null!;
 
-    public string ChallengeStatus { get; set; } = null!;
-
     public string? ChallengeImagePath { get; set; }
 
-    public virtual ICollection<TblProfileDetail> TblProfileDetails { get; set; } = new List<TblProfileDetail>();
+    public string? ChallengeStatus { get; set; }
+
+    public virtual ICollection<TblChallengesRewardsLog> TblChallengesRewardsLogs { get; set; } = new List<TblChallengesRewardsLog>();
 
     public virtual ICollection<TblReward> TblRewards { get; set; } = new List<TblReward>();
 }

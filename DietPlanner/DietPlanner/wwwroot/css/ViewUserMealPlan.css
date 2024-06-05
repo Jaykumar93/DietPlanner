@@ -1,0 +1,209 @@
+﻿/* DEMO STYLES ONLY */
+
+/* END DEMO STYLES */
+
+#carousel-wrapper,
+#carousel-wrapper #menu {
+    width: 640px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#carousel-wrapper {
+    position: relative;
+    height: auto;
+}
+
+    #carousel-wrapper #menu {
+        height: 350px;
+        overflow: hidden;
+        vertical-align: middle;
+        box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 20%);
+        border-radius: 5px;
+        transition: all 0.6s ease-in-out;
+    }
+
+        #carousel-wrapper #menu #current-option {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+            #carousel-wrapper #menu #current-option a {
+                color: var(--primary_colour);
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text1,
+            #carousel-wrapper #menu #current-option #current-option-text2 {
+                width: 240px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text1 {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1.35;
+                height: 200px;
+                justify-content: flex-start;
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text2 {
+                font-size: 0.8rem;
+                height: 40px;
+                justify-content: flex-end;
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text1::before,
+            #carousel-wrapper #menu #current-option #current-option-text1::after {
+                position: absolute;
+                width: 240px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text1::before {
+                content: attr(data-next-text);
+                transform: translate(0%, 380px);
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text1::after {
+                content: attr(data-previous-text);
+                transform: translate(0%, -380px);
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text2::before,
+            #carousel-wrapper #menu #current-option #current-option-text2::after {
+                position: absolute;
+                width: 240px;
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text2::before {
+                content: attr(data-next-text);
+                transform: translate(0%, 380px);
+            }
+
+            #carousel-wrapper #menu #current-option #current-option-text2::after {
+                content: attr(data-previous-text);
+                transform: translate(0%, -380px);
+            }
+
+    #carousel-wrapper #previous-option,
+    #carousel-wrapper #next-option {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: none;
+        display: block;
+        cursor: pointer;
+        background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256'%3E%3Cpolygon points='225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093' fill='%23333'%3E%3C/polygon%3E%3C/svg%3E");
+        background-size: cover;
+        position: absolute;
+        right: 0;
+    }
+
+    #carousel-wrapper #previous-option {
+        transform: scale(1.2) translate(10px, 24px);
+    }
+
+    #carousel-wrapper #next-option {
+        transform: scale(1.2) translate(10px, -24px) rotate(180deg);
+    }
+
+    #carousel-wrapper #image {
+        height: 240px;
+        width: 240px;
+        border-radius: 5px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #carousel-wrapper.anim-previous,
+    #carousel-wrapper.anim-next {
+        pointer-events: none;
+    }
+
+        #carousel-wrapper.anim-next #current-option-text1,
+        #carousel-wrapper.anim-next #current-option-text2 {
+            animation: next-text 0.65s 0.085s;
+        }
+
+        #carousel-wrapper.anim-previous #image,
+        #carousel-wrapper.anim-next #image {
+            animation: previous-next-image 0.65s 0.085s;
+        }
+
+        #carousel-wrapper.anim-previous #current-option-text1,
+        #carousel-wrapper.anim-previous #current-option-text2 {
+            animation: previous-text 0.65s 0.085s;
+        }
+
+@keyframes previous-text {
+
+    50%, 55% {
+        transform: translate(0%, 390px);
+    }
+
+    to {
+        transform: translate(0%, 380px);
+    }
+}
+
+@keyframes previous-next-image {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes next-text {
+
+    50%, 55% {
+        transform: translate(0%, -390px);
+    }
+
+    to {
+        transform: translate(0%, -380px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #carousel-wrapper #menu {
+        height: 430px;
+    }
+
+    #carousel-wrapper,
+    #carousel-wrapper #menu {
+        flex-direction: column;
+    }
+
+        #carousel-wrapper #menu #current-option {
+            width: 240px;
+        }
+}

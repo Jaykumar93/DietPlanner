@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Domain.DTO.ActivityTrackingViewModel>
+
+@{
+    Layout = "_Layout";
+    var title = "Activity Detail";
+    ViewData["Title"] = title;
+}
+
+<div class="container">
+
+    <h1>@ViewData["Title"]</h1>
+    <h3><a asp-action="AddActivity" class="btn btn-sm btn-secondary">Add New Activity</a></h3>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>User Email</th>
+                <th>Activity Type</th>
+                <th>Activity Start Datetime</th>
+                <th>Activity End Datetime</th>
+                <th>Activity Intensity</th>
+                <th>Calories Burned</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var activity in Model)
+            {
+                <tr>
+                    <td>@activity.Email</td>
+                    <td>@activity.ActivityType</td>
+                    <td>@activity.ActivityStartDatetime</td>
+                    <td>@activity.ActivityEndDatetime</td>
+                    <td>@activity.ActivityIntensity</td>
+                    <td>@activity.CalorieBurned</td>
+                    <td>
+                        <a asp-action="UpdateActivity" asp-route-ActivityId="@activity.ActivityId" class="btn btn-sm btn-primary">Update</a>
+                        <form asp-action="DeleteActivity" method="post" asp-route-ActivityId="@activity.ActivityId" style="display:inline;">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+<style>
+    .container {
+        margin-top: 20px;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+    #future-component {
+        height: 100%;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>

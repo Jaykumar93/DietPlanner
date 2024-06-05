@@ -15,5 +15,5 @@ public partial class TblReward
 
     public virtual TblChallenge Challenge { get; set; } = null!;
 
-    public virtual ICollection<TblProfileDetail> TblProfileDetails { get; set; } = new List<TblProfileDetail>();
+    public virtual ICollection<TblChallengesRewardsLog> TblChallengesRewardsLogs { get; set; } = new List<TblChallengesRewardsLog>();
 }

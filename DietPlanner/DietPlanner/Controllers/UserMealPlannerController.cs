@@ -6,36 +6,30 @@ using Microsoft.EntityFrameworkCore;
 using Domain.Data;
 using Repository;
 using Newtonsoft.Json;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Pipelines.Sockets.Unofficial.Arenas;
+using System.Numerics;
+using Domain.Entities;
+using AspNetCoreHero.ToastNotification.Abstractions;
 namespace Web.Controllers.User
 {
     /*[Authorize(Roles = "User")]*/
     public class UserMealPlannerController : Controller
     {
-        private readonly DietContext _context;
+        private readonly Domain.Data.DietContext _context;
         private readonly MealDetailRepository _mealDetailRepository;
+        private readonly MealPlanRepository _mealPlanRepository;
+        private readonly INotyfService _notyf;
 
-        public UserMealPlannerController(DietContext context, MealDetailRepository mealDetailRepository) 
+        public UserMealPlannerController(Domain.Data.DietContext context, MealDetailRepository mealDetailRepository,MealPlanRepository mealPlanRepository,INotyfService notyf) 
         {
             _context = context;
             _mealDetailRepository = mealDetailRepository;
+            _mealPlanRepository = mealPlanRepository;
+            _notyf = notyf;
         }
-
-
-        private List<SelectListItem> GetCategorySelectList()
-        {
-            return Enum.GetValues(typeof(MealViewModel.MealType))
-                .Cast<MealViewModel.MealType>()
-                .Select(e => new SelectListItem
-                {
-                    Value = e.ToString(),
-                    Text = e.ToString()
-                }).ToList();
-        }
-
-
-        public IActionResult MealPlans(List<MealViewModel.MealType> selectedCategories,decimal? minCalorie, decimal? maxCalorie, string term="", string orderBy = "" )
+        
+        public IActionResult MealPlans(List<MealViewModel.MealType> selectedCategories,decimal? minCalorie, decimal? maxCalorie, string term="", string orderBy = "" )  
         {
 
             term = term.ToLower();
@@ -110,16 +104,92 @@ namespace Web.Controllers.User
                                                 m.MealWater.ToString().Contains(term));
             }
 
-            ViewBag.Categories = GetCategorySelectList();
-            ViewBag.SelectedCategories = selectedCategories;
             return View(mealDetails);
         }
-
-        
-        public IActionResult _GridView()
+    
+       
+        public IActionResult PlanDashboard(decimal? minCalorie, decimal? maxCalorie, string term = "", string orderBy = "")
         {
-            return View();   
+            term = term.ToLower();
+            var planViewOrder = new MealPlanViewModel();
+
+            var allPlans = _context.TblMealPlans.ToList();
+
+            var planDetails = allPlans.Select(plan =>
+            {
+                Dictionary<string, string> nutritionInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(plan.NutritionInfo);
+
+                return new MealPlanViewModel
+                {
+                    CreatedBy = plan.CreatedBy,
+                    PlanName = plan.PlanName,
+                    PlanDescription = plan.PlanDescription,
+                    BreakfastMealName = _context.TblMeals.Where(meal=>meal.MealId == plan.BreakfastMealId).Select(meal=>meal.MealName).FirstOrDefault(),
+                    LunchMealName = _context.TblMeals.Where(meal => meal.MealId == plan.LunchMealId).Select(meal => meal.MealName).FirstOrDefault(),
+                    DinnerMealName = _context.TblMeals.Where(meal => meal.MealId == plan.DinnerMealId).Select(meal => meal.MealName).FirstOrDefault(),
+                    PlanCalorieCount = int.Parse(nutritionInfo.GetValueOrDefault("CalorieCount", "0")),
+                    PlanVitamin = nutritionInfo.GetValueOrDefault("MealVitamin", "None"),
+                    PlanMinerals = nutritionInfo.GetValueOrDefault("MealMinerals", "None"),
+                    PlanProtein = int.Parse(nutritionInfo.GetValueOrDefault("MealProtein", "0")),
+                    PlanFat = int.Parse(nutritionInfo.GetValueOrDefault("MealFat", "0")),
+                    PlanCarbohydrates = int.Parse(nutritionInfo.GetValueOrDefault("MealCarbohydrates", "0")),
+                    PlanWater = int.Parse(nutritionInfo.GetValueOrDefault("MealWater", "0")),
+                    ImageLocation = plan.PlanImagePath,
+                };
+            });
+
+           /* if (selectedCategories?.Count > 0)
+            {
+                mealDetails = mealDetails.Where(p => selectedCategories.Contains(p.TypeOfMeal));
+            }*/
+
+            if (minCalorie.HasValue)
+            {
+                planDetails = planDetails.Where(plan => plan.PlanCalorieCount >= minCalorie.Value);
+            }
+
+            if (maxCalorie.HasValue)
+            {
+                planDetails = planDetails.Where(plan => plan.PlanCalorieCount <= maxCalorie.Value);
+            }
+            switch (orderBy)
+            {
+                case "plan_name_desc":
+                    planDetails = planDetails.OrderByDescending(plan => plan.PlanName);
+                    break;
+
+                case "calorie_count_desc":
+                    planDetails = planDetails.OrderByDescending(plan => plan.PlanCalorieCount);
+                    break;
+                case "calorie_count":
+                    planDetails = planDetails.OrderBy(plan => plan.PlanCalorieCount);
+                    break;
+                case "plan_name":
+                    planDetails = planDetails.OrderBy(plan => plan.PlanName);
+                    break;
+                default:
+                    planDetails = planDetails.OrderBy(plan => plan.PlanName);
+                    break;
+            }
+
+            if (!string.IsNullOrEmpty(term))
+            {
+                planDetails = planDetails.Where(p => p.PlanName.ToLower().Contains(term) ||
+                                                p.PlanDescription.ToLower().Contains(term) ||
+                                                p.PlanCalorieCount.ToString().Contains(term) ||
+                                                p.BreakfastMealName.ToString().Contains(term) ||
+                                                p.LunchMealName.ToString().Contains(term) ||
+                                                p.DinnerMealName.ToString().Contains(term) ||
+                                                p.PlanVitamin.ToLower().Contains(term) ||
+                                                p.PlanMinerals.ToLower().Contains(term) ||
+                                                p.PlanProtein.ToString().Contains(term) ||
+                                                p.PlanCarbohydrates.ToString().Contains(term) ||
+                                                p.PlanWater.ToString().Contains(term));
+            }
+
+           return View(planDetails);
         }
+
 
         public ActionResult MealInfoDetails(string mealName)
         {
@@ -144,7 +214,48 @@ namespace Web.Controllers.User
             };
             return PartialView("MealInfoDetails",mealmodel);
         }
-            
+
+
+        public ActionResult PlanInfoDetails(string planName)
+        {
+            var planDetails = _context.TblMealPlans.Where(plan => plan.PlanName == planName).FirstOrDefault();
+            Dictionary<string, string> nutritionInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(planDetails.NutritionInfo);
+
+            MealPlanViewModel planModel = new MealPlanViewModel
+            {
+                CreatedBy = planDetails.CreatedBy,
+                PlanName = planDetails.PlanName,
+                PlanDescription = planDetails.PlanDescription,
+                BreakfastMealName = _context.TblMeals.Where(meal => meal.MealId == planDetails.BreakfastMealId).Select(meal => meal.MealName).FirstOrDefault(),
+                LunchMealName = _context.TblMeals.Where(meal => meal.MealId == planDetails.LunchMealId).Select(meal => meal.MealName).FirstOrDefault(),
+                DinnerMealName = _context.TblMeals.Where(meal => meal.MealId == planDetails.DinnerMealId).Select(meal => meal.MealName).FirstOrDefault(),
+                PlanCalorieCount = int.Parse(nutritionInfo.GetValueOrDefault("CalorieCount", "0")),
+                PlanVitamin = nutritionInfo.GetValueOrDefault("MealVitamin", "None"),
+                PlanMinerals = nutritionInfo.GetValueOrDefault("MealMinerals", "None"),
+                PlanProtein = int.Parse(nutritionInfo.GetValueOrDefault("MealProtein", "0")),
+                PlanFat = int.Parse(nutritionInfo.GetValueOrDefault("MealFat", "0")),
+                PlanCarbohydrates = int.Parse(nutritionInfo.GetValueOrDefault("MealCarbohydrates", "0")),
+                PlanWater = int.Parse(nutritionInfo.GetValueOrDefault("MealWater", "0")),
+                ImageLocation = planDetails.PlanImagePath
+
+            };
+            return PartialView("PlanInfoDetails", planModel);
+        }
+
+        public async Task<ActionResult> AddPlanToUser(string PlanName, string UserName)
+        {
+            bool IsMealAddedToProfile =await _mealPlanRepository.AddPlanToUser(PlanName, UserName);
+            if(IsMealAddedToProfile)
+            {
+                return Json(new { success = true, message = $"{PlanName} Meal Plan is Added to You Profile({UserName})" });
+
+            }
+            else
+            {
+                return Json(new { error = true, message = $"Error While Adding {PlanName} Meal Plan To Your Profile ({UserName})" });
+            }
+        }
     }
+    
 }
 

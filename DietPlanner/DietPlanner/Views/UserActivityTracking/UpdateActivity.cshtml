@@ -1,0 +1,68 @@
+﻿@using static Domain.DTO.ActivityTrackingViewModel
+
+@model Domain.DTO.ActivityTrackingViewModel
+@{
+    Layout = "_Layout";
+    var title = "Update User Activity Details";
+    ViewData["Title"] = title;
+}
+
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+
+
+<h2>@title</h2>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form class="m-1 p-1" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" readonly />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ActivityType"></label>
+        <input asp-for="ActivityType" class="form-control" type="text" placeholder="Enter The Type of Activity" />
+        <span asp-validation-for="ActivityType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ActivityStartDatetime"></label>
+        <input asp-for="ActivityStartDatetime" class="form-control" type="datetime-local" placeholder="Enter Activity Start Dat and Time" />
+        <span asp-validation-for="ActivityStartDatetime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ActivityEndDatetime"></label>
+        <input asp-for="ActivityEndDatetime" class="form-control" type="datetime-local" placeholder="Enter Activity End Dat and Time" />
+        <span asp-validation-for="ActivityEndDatetime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ActivityIntensity"></label>
+        @Html.DropDownListFor(model => model.ActivityIntensity, Enum.GetValues(typeof(ActivityIntensityType)).Cast<ActivityIntensityType>().Select(e => new SelectListItem
+   {
+       Text = e.ToString(),
+       Value = ((int)e).ToString()
+   }), "Select Intensity", new { @class = "form-control" })
+        <span asp-validation-for="ActivityIntensity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CalorieBurned"></label>
+        <input asp-for="CalorieBurned" class="form-control" type="number" placeholder="Enter the Amount of Calorie Burned" />
+        <span asp-validation-for="CalorieBurned" class="text-danger"></span>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,226 @@
+﻿@model Domain.DTO.MealPlanViewModel
+
+<style>
+    .article-wrapper {
+        display: flex;
+        flex-direction: row; /* Ensure the image and article body are in a row */
+        gap: 16px; /* Space between the image and the article body */
+        padding: 16px; /* Padding for the modal body */
+    }
+
+    .image {
+        flex: 1;
+        display: flex;
+        align-items: center; /* Center image vertically */
+        justify-content: center; /* Center image horizontally */
+        overflow: hidden; /* Prevent overflow of image */
+    }
+
+    .article-body {
+        flex: 2;
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Center content vertically */
+        padding: 16px; /* Padding inside the article body */
+    }
+
+        .article-body h2 {
+            margin: 0 0 12px 0; /* Margin below the title */
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .article-body p {
+            margin: 4px 0; /* Margin for paragraphs */
+            color: #555;
+        }
+
+    .Nutrition-Info h4 {
+        margin-top: 16px; /* Margin above nutrition info heading */
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .Nutrition-Info p {
+        margin: 4px 0; /* Margin for nutrition info paragraphs */
+        color: #555;
+    }
+
+    .image img {
+        max-height: 100%; /* Ensure the image scales within the container */
+        max-width: 100%; /* Ensure the image scales within the container */
+        object-fit: cover; /* Cover the container without stretching */
+        border-radius: 8px; /* Optional: rounded corners for the image */
+        transition: transform 0.4s ease-in-out; /* Smooth transition for hover effects */
+    }
+
+    .articles {
+        background: #fff; /* Background color for the modal */
+        border-radius: 8px; /* Rounded corners for the modal */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px; /* Optional: shadow for the modal */
+    }
+
+    .modal-header {
+        padding: 16px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .modal-title {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .modal-footer {
+        padding: 16px;
+        border-top: 1px solid #dee2e6;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-close {
+        color: #fff; /* White text color */
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Adding transition for smooth animation */
+    }
+
+        .btn-close.animated {
+            animation: pulse 0.5s ease infinite; /* Applying the animation */
+        }
+
+
+    .btn-outline-secondary, .btn-success {
+        padding: 8px 16px;
+        font-size: 1rem;
+        border-radius: 4px;
+    }
+
+    .text-decoration-underline {
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        margin: 16px 0; /* Margin for the underline */
+    }
+
+</style>
+<div class="articles">
+    <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Plan Info: @Model.PlanName</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="article-wrapper modal-body flex">
+        <div class="image">
+            <img class="img-thumbnail" src="@Url.Content(Model.ImageLocation)" alt="@Model.PlanName : @Model.PlanDescription" />
+        </div>
+        <div class="article-body">
+            <h2>@Model.PlanName</h2>
+            <p>Total Calorie Count: @Model.PlanCalorieCount</p>
+            <div class="text-decoration-underline"></div>
+
+            <h6>Description:</h6>
+            <p> @Model.PlanDescription</p>
+
+            <div class="text-decoration-underline"></div>
+            <div class="Nutrition-Info">
+                <h4>Nutrition Information:</h4>
+                <p>Calorie Count: @Model.PlanCalorieCount</p>
+                <p>Vitamins: @Model.PlanVitamin</p>
+                <p>Minerals: @Model.PlanMinerals</p>
+                <p>Proteins: @Model.PlanProtein</p>
+                <p>Carbohydrates: @Model.PlanCarbohydrates</p>
+                <p>Fats: @Model.PlanFat</p>
+                <p>Water Quantity: @Model.PlanWater</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        <button asp-action="AddPlanToUser" type="button" id="btnMakePlanMyPlan" class="btn btn-success" data-bs-dismiss="modal">Make This My Plan</button>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    $("#closbtn").click(function () {
+        $('#myModal').modal('hide');
+    });
+               
+
+    $(document).ready(function () {
+        var userName; // Declare a global variable to hold the logged-in user data
+
+        $.ajax({
+            url: '/Auth/LayoutData',
+            type: 'GET',
+            success: function (data) {
+                debugger;
+                var loggedUser;
+                console.log('Raw data from server:', data); // Log the raw data
+
+                if (typeof data === 'string') {
+                    try {
+                        loggedUser = JSON.parse(data); // Attempt to parse the data
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                    }
+                } else {
+                    loggedUser = data.Username; // If data is already an object
+                }
+
+                console.log('Parsed user data:', loggedUser); // Log the parsed user data
+                console.log('Username:', loggedUser.Username); // Access Username
+                userName = loggedUser.Username;
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error('Error occurred while retrieving logged-in user:', errorThrown);
+            }
+        });
+
+        document.getElementById("btnMakePlanMyPlan")
+            .addEventListener("click", function () {
+                if (!userName) {
+                    console.error("Logged user data is not available yet.");
+                    return;
+                }
+
+                // Get the plan ID and user ID
+                debugger;
+                var planName = "@Model.PlanName"; // Replace with the actual value
+
+                // Create an object to hold the data
+                var data = {
+                    PlanName: planName,
+                    UserName: userName // Use the loggedUser data
+                };
+
+                console.log(planName);
+
+                // Send an AJAX request
+                $.ajax({
+                    url: "/UserMealPlanner/AddPlanToUser",
+                    type: "POST",
+                        data: data, 
+                    success: function (response) {
+                        if (response.success) {
+                            notyf.success(response.message);
+                        } else {
+                            notyf.error(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error here
+                        console.error("Error adding plan:", error);
+                    }
+                });
+            });
+    });
+</script>
+
+
+
+
