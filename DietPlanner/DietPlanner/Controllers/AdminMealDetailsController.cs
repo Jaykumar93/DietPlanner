@@ -1,16 +1,12 @@
-﻿using Domain.Data;
-using Domain.Entities;
+﻿
+using AspNetCoreHero.ToastNotification.Abstractions;
+using Domain.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using Repository.Interfaces;
-using Services.AuthServices;
-using Domain.DTO;
-using Services;
-using AspNetCoreHero.ToastNotification.Abstractions;
 using Repository;
+using Repository.Interfaces;
+using Services;
+using Services.AuthServices;
 
 namespace Web.Controllers.Admin
 {
@@ -19,12 +15,12 @@ namespace Web.Controllers.Admin
     public class AdminMealDetailsController : Controller
     {
         private readonly Domain.Data.DietContext _context;
-        private readonly MealDetailRepository _mealDetailRepository;
+        private readonly IMealDetailRepository _mealDetailRepository;
         private readonly Upload _upload;
         private readonly INotyfService _notyf;
 
 
-        public AdminMealDetailsController(Domain.Data.DietContext context,MealDetailRepository mealDetailRepository, Upload upload,INotyfService notyf)
+        public AdminMealDetailsController(Domain.Data.DietContext context, IMealDetailRepository mealDetailRepository, Upload upload, INotyfService notyf)
         {
             _context = context;
             _mealDetailRepository = mealDetailRepository;
@@ -44,7 +40,7 @@ namespace Web.Controllers.Admin
 
 
             var mealDetailModel = _mealDetailRepository.GetAllMeals();
-           
+
             switch (orderBy)
             {
                 case "meal_name_desc":
@@ -92,8 +88,8 @@ namespace Web.Controllers.Admin
         {
             try
             {
-                bool IsMealAdded  =await _mealDetailRepository.AddMealDetails(model);
-                if(IsMealAdded)
+                bool IsMealAdded = await _mealDetailRepository.AddMealDetails(model);
+                if (IsMealAdded)
                 {
                     _notyf.Success("Meal Added Successfully");
                 }
@@ -101,7 +97,7 @@ namespace Web.Controllers.Admin
                 {
                     _notyf.Warning("Meal Is Not Added");
                 }
-                
+
                 return RedirectToAction("ViewMeals", "MealDetails");
             }
             catch (Exception ex)
@@ -128,8 +124,8 @@ namespace Web.Controllers.Admin
             try
             {
                 bool IsMealUpdated = await _mealDetailRepository.UpdateMeal(UpdatedDetails);
-                if(IsMealUpdated)
-                { 
+                if (IsMealUpdated)
+                {
                     _notyf.Success("Meal Updated Successfully");
                 }
                 else
@@ -143,7 +139,7 @@ namespace Web.Controllers.Admin
             {
 
                 _notyf.Error("An unexpected error occurred while updating the meal. Please contact support.");
-                
+
                 return RedirectToAction("ViewMeals", "AdminMealDetails");
             }
         }
@@ -154,7 +150,7 @@ namespace Web.Controllers.Admin
         public async Task<IActionResult> DeleteMealAsync(string mealName)
         {
             bool IsMealDeleted = await _mealDetailRepository.DeleteMealDetail(mealName);
-            if(IsMealDeleted)
+            if (IsMealDeleted)
             {
                 _notyf.Success("Meal Deleted Successfuly");
             }

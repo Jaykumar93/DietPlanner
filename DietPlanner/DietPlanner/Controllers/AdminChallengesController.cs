@@ -8,6 +8,7 @@ using Services;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Domain.Data;
 using Repository;
+using Repository.Interfaces;
 
 namespace Web.Controllers
 {
@@ -16,11 +17,11 @@ namespace Web.Controllers
     public class AdminChallengesController : Controller
     {
         private readonly Domain.Data.DietContext _context;
-        private readonly ChallengesRewardRepository _challengesRewardController;
+        private readonly IChallengeRewardRepository _challengesRewardController;
         private readonly Upload _upload;
         private readonly INotyfService _notyf;
 
-        public AdminChallengesController(Domain.Data.DietContext context,ChallengesRewardRepository challengesRewardController, Upload upload, INotyfService notyf)
+        public AdminChallengesController(Domain.Data.DietContext context, IChallengeRewardRepository challengesRewardController, Upload upload, INotyfService notyf)
         {
             _context = context;
             _challengesRewardController = challengesRewardController;

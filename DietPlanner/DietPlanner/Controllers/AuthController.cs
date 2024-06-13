@@ -49,33 +49,36 @@ namespace Web.Controllers
                     _notyf.Warning("Invalid username or password.");
                     return RedirectToAction("SignIn", "Auth");
                 }
-
-                var encryptedPass = Authentication.Checking(login.Password, _config["PasswordKey"], userInfo.PasswordSalt);
-
-                if (encryptedPass == userInfo.PasswordHash)
-                {
-                    var roleName = _context.TblRoles.Where(role => role.RoleId == profileInfo.RoleId).Select(role => role.RoleName).FirstOrDefault();
-                    var token = Authorization.GetJWTToken(login, _config, roleName);
-
-
-                    var cookieOptions = new CookieOptions
-                    {
-                        HttpOnly = true,
-                        Secure = true,
-                        SameSite = SameSiteMode.Strict,
-                    };
-                    HttpContext.Response.Cookies.Append("JwtToken", token, cookieOptions);
-
-                    _notyf.Success("You have successfully logged In");
-
-                    return RedirectToAction("DashboardRedirection", "RoleBasedRedirection");
-                }
                 else
                 {
-                    // Incorrect password
-                    _notyf.Warning("Invalid username or password.");
-                    return RedirectToAction("SignIn", "Auth");
+                    var encryptedPass = Authentication.Checking(login.Password, _config["PasswordKey"], userInfo.PasswordSalt);
+
+                    if (encryptedPass == userInfo.PasswordHash)
+                    {
+                        var roleName = _context.TblRoles.Where(role => role.RoleId == profileInfo.RoleId).Select(role => role.RoleName).FirstOrDefault();
+                        var token = Authorization.GetJWTToken(login, _config, roleName);
+
+
+                        var cookieOptions = new CookieOptions
+                        {
+                            HttpOnly = true,
+                            Secure = true,
+                            SameSite = SameSiteMode.Strict,
+                        };
+                        HttpContext.Response.Cookies.Append("JwtToken", token, cookieOptions);
+
+                        _notyf.Success("You have successfully logged In");
+
+                        return RedirectToAction("DashboardRedirection", "RoleBasedRedirection");
+                    }
+                    else
+                    {
+                        // Incorrect password
+                        _notyf.Warning("Invalid username or password.");
+                        return RedirectToAction("SignIn", "Auth");
+                    }
                 }
+                
             }
             catch (Exception ex)
             {

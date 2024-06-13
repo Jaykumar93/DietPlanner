@@ -11,17 +11,18 @@ using Pipelines.Sockets.Unofficial.Arenas;
 using System.Numerics;
 using Domain.Entities;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using Repository.Interfaces;
 namespace Web.Controllers.User
 {
     /*[Authorize(Roles = "User")]*/
     public class UserMealPlannerController : Controller
     {
         private readonly Domain.Data.DietContext _context;
-        private readonly MealDetailRepository _mealDetailRepository;
-        private readonly MealPlanRepository _mealPlanRepository;
+        private readonly IMealDetailRepository _mealDetailRepository;
+        private readonly IMealPlanRepository _mealPlanRepository;
         private readonly INotyfService _notyf;
 
-        public UserMealPlannerController(Domain.Data.DietContext context, MealDetailRepository mealDetailRepository,MealPlanRepository mealPlanRepository,INotyfService notyf) 
+        public UserMealPlannerController(Domain.Data.DietContext context, IMealDetailRepository mealDetailRepository, IMealPlanRepository mealPlanRepository,INotyfService notyf) 
         {
             _context = context;
             _mealDetailRepository = mealDetailRepository;

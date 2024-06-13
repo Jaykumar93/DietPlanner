@@ -9,12 +9,13 @@ using System.Data;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Repository.Interfaces;
 
 
 
 namespace Repository
 {
-    public class MealPlanRepository
+    public class MealPlanRepository : IMealPlanRepository
     {
         private readonly Domain.Data.DietContext _context;
         private readonly IConfiguration _config;

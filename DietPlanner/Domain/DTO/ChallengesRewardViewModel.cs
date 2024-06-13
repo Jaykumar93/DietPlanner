@@ -52,7 +52,7 @@ namespace Domain.DTO
 
         public enum ChallengeStatus
         {
-            Yet_To_Start,
+            NotStarted,
             Ongoing,
             Ended
         }
@@ -66,7 +66,14 @@ namespace Domain.DTO
 
         public DateTime EndDatetime { get; set; }
 
-        public string ChallengeGoals { get; set; } = null!;
+        public int? CalorieCountGoal { get; set; }
+
+        public string? VitaminGoals { get; set; } = null!;
+        public string? MineralsGoals { get; set; } = null!;
+        public int? ProteinGoals { get; set; }
+        public int? FatGoals { get; set; }
+        public int? CarbohydratesGoals { get; set; }
+        public int? WaterGoals { get; set; }
 
         public IFormFile? ChallengeImagePath { get; set; }
         public string? ChallengeImgLocation { get; set; }
@@ -82,7 +89,7 @@ namespace Domain.DTO
 
         public UserChallengeStatus? UserStatus { get; set; } 
 
-        public ChallengeStatus? Challenge { get; set; }
+        public ChallengeStatus? StatusOfChallenge { get; set; }
     }
 
 }

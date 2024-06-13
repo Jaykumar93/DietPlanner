@@ -13,7 +13,7 @@ namespace Repository.Interfaces
         public Task<bool> UpdateMealPlans(MealPlanViewModel model, IEnumerable<Claim> claims);
 
         public Task<bool> DeleteMealPlans(string planName);
-        
 
+        public Task<bool> AddPlanToUser(string PlanName, string UserName);
     }
 }

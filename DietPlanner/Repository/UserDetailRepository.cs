@@ -1,10 +1,10 @@
 ﻿using Domain.Data;
 using Domain.Entities;
-
+using Repository.Interfaces;
 
 namespace Repository
 {
-    public class UserDetailRepository 
+    public class UserDetailRepository: IUserDetailRepository
     {
         private readonly Domain.Data.DietContext _context;
 
@@ -20,6 +20,8 @@ namespace Repository
             _context.SaveChanges();
         }
 
+        public List<TblUserDetail> GetAllUserDetails() => throw new NotImplementedException();
+
         public TblUserDetail GetUserDetailByEmail(string email)
         {
             return _context.TblUserDetails.FirstOrDefault(TblUserDetail => TblUserDetail.Email == email);
@@ -32,9 +34,9 @@ namespace Repository
 
     public class Validation
     {
-        private readonly UserDetailRepository _userDetailRepository;
+        private readonly IUserDetailRepository _userDetailRepository;
 
-        public Validation(UserDetailRepository userDetailRepository)
+        public Validation(IUserDetailRepository userDetailRepository)
         {
             _userDetailRepository = userDetailRepository;
         }

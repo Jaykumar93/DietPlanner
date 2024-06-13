@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\dietplanner\\controllers\\userchallengescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\controllers\\userchallengescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\views\\feedsection\\publicfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\views\\feedsection\\publicfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\views\\usermealplanner\\planinfodetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\views\\usermealplanner\\planinfodetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\dietplanner\\views\\userchallenges\\challengeinfodetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\views\\userchallenges\\challengeinfodetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{435E61C7-F872-4F38-88BE-64DA151F53CC}|Repository\\Repository.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\repository\\interfaces\\ichallengerewardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{435E61C7-F872-4F38-88BE-64DA151F53CC}|Repository\\Repository.csproj|solutionrelative:repository\\interfaces\\ichallengerewardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\dietplanner\\controllers\\usermealplannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\controllers\\usermealplannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{435E61C7-F872-4F38-88BE-64DA151F53CC}|Repository\\Repository.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\repository\\challengesrewardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{435E61C7-F872-4F38-88BE-64DA151F53CC}|Repository\\Repository.csproj|solutionrelative:repository\\challengesrewardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\views\\useractivitytracking\\useractivity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\views\\useractivitytracking\\useractivity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{435E61C7-F872-4F38-88BE-64DA151F53CC}|Repository\\Repository.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\repository\\mealplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{435E61C7-F872-4F38-88BE-64DA151F53CC}|Repository\\Repository.csproj|solutionrelative:repository\\mealplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC2DB491-53E9-459F-B1F3-BBBF7548FCD3}|Services\\Services.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\services\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC2DB491-53E9-459F-B1F3-BBBF7548FCD3}|Services\\Services.csproj|solutionrelative:services\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\dietplanner\\controllers\\feedsectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC78A93-0F93-4DE3-AAF0-7C877D7C27AD}|DietPlanner\\Web.csproj|solutionrelative:dietplanner\\controllers\\feedsectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC2DB491-53E9-459F-B1F3-BBBF7548FCD3}|Services\\Services.csproj|c:\\users\\coditas-admin\\documents\\diet planning project\\main\\dietapp\\dietplanner\\services\\backgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC2DB491-53E9-459F-B1F3-BBBF7548FCD3}|Services\\Services.csproj|solutionrelative:services\\backgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,67 +62,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlanInfoDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserMealPlanner\\PlanInfoDetails.cshtml",
-              "RelativeDocumentMoniker": "DietPlanner\\Views\\UserMealPlanner\\PlanInfoDetails.cshtml",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserMealPlanner\\PlanInfoDetails.cshtml",
-              "RelativeToolTip": "DietPlanner\\Views\\UserMealPlanner\\PlanInfoDetails.cshtml",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAAANMAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-05T04:44:28.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ChallengeInfoDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserChallenges\\ChallengeInfoDetails.cshtml",
-              "RelativeDocumentMoniker": "DietPlanner\\Views\\UserChallenges\\ChallengeInfoDetails.cshtml",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserChallenges\\ChallengeInfoDetails.cshtml",
-              "RelativeToolTip": "DietPlanner\\Views\\UserChallenges\\ChallengeInfoDetails.cshtml",
-              "ViewState": "AQIAALsAAAAAAAAAAAAAAM4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T12:15:56.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserChallengesController.cs",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\UserChallengesController.cs",
-              "RelativeDocumentMoniker": "DietPlanner\\Controllers\\UserChallengesController.cs",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\UserChallengesController.cs",
-              "RelativeToolTip": "DietPlanner\\Controllers\\UserChallengesController.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAwwH4AAAAIAAAA",
+              "Title": "IChallengeRewardRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\Interfaces\\IChallengeRewardRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IChallengeRewardRepository.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\Interfaces\\IChallengeRewardRepository.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IChallengeRewardRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:13:56.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserMealPlannerController.cs",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\UserMealPlannerController.cs",
-              "RelativeDocumentMoniker": "DietPlanner\\Controllers\\UserMealPlannerController.cs",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\UserMealPlannerController.cs",
-              "RelativeToolTip": "DietPlanner\\Controllers\\UserMealPlannerController.cs",
-              "ViewState": "AQIAAO0AAAAAAAAAAAAuwPsAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T10:11:08.163Z",
+              "WhenOpened": "2024-06-13T08:31:18.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UserActivity.cshtml",
-              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserActivityTracking\\UserActivity.cshtml",
-              "RelativeDocumentMoniker": "DietPlanner\\Views\\UserActivityTracking\\UserActivity.cshtml",
-              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\UserActivityTracking\\UserActivity.cshtml",
-              "RelativeToolTip": "DietPlanner\\Views\\UserActivityTracking\\UserActivity.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEQAAAAAAAAA",
+              "Title": "MealPlanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\MealPlanRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\MealPlanRepository.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\MealPlanRepository.cs",
+              "RelativeToolTip": "Repository\\MealPlanRepository.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T08:29:12.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PublicFeed.cshtml",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\FeedSection\\PublicFeed.cshtml",
+              "RelativeDocumentMoniker": "DietPlanner\\Views\\FeedSection\\PublicFeed.cshtml",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Views\\FeedSection\\PublicFeed.cshtml",
+              "RelativeToolTip": "DietPlanner\\Views\\FeedSection\\PublicFeed.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T12:27:44.747Z",
+              "WhenOpened": "2024-06-11T10:23:03.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Program.cs",
+              "RelativeDocumentMoniker": "DietPlanner\\Program.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Program.cs",
+              "RelativeToolTip": "DietPlanner\\Program.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T10:20:07.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChallengesRewardRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\ChallengesRewardRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ChallengesRewardRepository.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Repository\\ChallengesRewardRepository.cs",
+              "RelativeToolTip": "Repository\\ChallengesRewardRepository.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA1wBcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T08:12:31.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FeedSectionController.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\FeedSectionController.cs",
+              "RelativeDocumentMoniker": "DietPlanner\\Controllers\\FeedSectionController.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\Controllers\\FeedSectionController.cs",
+              "RelativeToolTip": "DietPlanner\\Controllers\\FeedSectionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T10:25:44.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Services\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Services\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Services\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Services\\Hubs\\ChatHub.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T10:19:03.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BackgroundService.cs",
+              "DocumentMoniker": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Services\\BackgroundService.cs",
+              "RelativeDocumentMoniker": "Services\\BackgroundService.cs",
+              "ToolTip": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\Services\\BackgroundService.cs",
+              "RelativeToolTip": "Services\\BackgroundService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwv2cAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T09:35:30.564Z",
               "EditorCaption": ""
             }
           ]

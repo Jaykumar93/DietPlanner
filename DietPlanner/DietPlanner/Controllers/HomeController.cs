@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.Security.Claims;
 using Domain.DTO;
 using static Domain.DTO.ActivityTrackingViewModel;
+using Repository.Interfaces;
 
 
 namespace DietPlanner.Controllers
@@ -18,11 +19,11 @@ namespace DietPlanner.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly UserDetailRepository _userDetailRepository;
+        private readonly IUserDetailRepository _userDetailRepository;
         private readonly IDistributedCache _cache;
         private readonly Domain.Data.DietContext _context;
 
-        public HomeController(ILogger<HomeController> logger, UserDetailRepository userDetailRepository, IDistributedCache cache, Domain.Data.DietContext context)
+        public HomeController(ILogger<HomeController> logger, IUserDetailRepository userDetailRepository, IDistributedCache cache, Domain.Data.DietContext context)
         {
             _logger = logger;
             _userDetailRepository = userDetailRepository;

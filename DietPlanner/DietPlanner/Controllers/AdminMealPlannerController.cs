@@ -20,12 +20,12 @@ namespace Web.Controllers.Admin
     public class AdminMealPlannerController : Controller
     {
         private readonly Domain.Data.DietContext _context;
-        private readonly MealPlanRepository _mealPlanRepository;
+        private readonly IMealPlanRepository _mealPlanRepository;
         private readonly MealInfoSummarize _mealInfoSummarize;
         private readonly Upload _upload;
         private readonly INotyfService _notyf;
 
-        public AdminMealPlannerController(Domain.Data.DietContext dietContext, MealPlanRepository mealPlanRepository ,MealInfoSummarize mealInfoSummarize, Upload upload, INotyfService notyf)
+        public AdminMealPlannerController(Domain.Data.DietContext dietContext, IMealPlanRepository mealPlanRepository ,MealInfoSummarize mealInfoSummarize, Upload upload, INotyfService notyf)
         {
             _context = dietContext;
             _mealPlanRepository = mealPlanRepository;

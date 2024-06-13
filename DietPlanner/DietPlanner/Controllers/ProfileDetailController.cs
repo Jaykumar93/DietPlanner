@@ -11,6 +11,7 @@ using System.Security.Claims;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Repository;
 using Microsoft.AspNetCore.Components.Web;
+using Repository.Interfaces;
 
 namespace Web.Controllers.User
 {
@@ -20,11 +21,11 @@ namespace Web.Controllers.User
     public class ProfileDetailController : Controller
     {
         private readonly Domain.Data.DietContext _context;
-        private readonly ProfileDetailRepository _profileDetailRepository;
+        private readonly IProfileDetailRepository _profileDetailRepository;
         private readonly Upload _upload;
         private readonly INotyfService _notyf;
 
-        public ProfileDetailController(Domain.Data.DietContext context, ProfileDetailRepository profileDetailRepository, Upload upload, INotyfService notyf)
+        public ProfileDetailController(Domain.Data.DietContext context, IProfileDetailRepository profileDetailRepository, Upload upload, INotyfService notyf)
         {
             _context = context;
             _profileDetailRepository = profileDetailRepository;

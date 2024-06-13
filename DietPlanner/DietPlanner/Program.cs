@@ -1,18 +1,17 @@
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using Domain.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Quartz;
 using Repository;
-using Services.AuthServices;
-using System.Text;
-using System.Net;
+using Repository.Interfaces;
+using Services;
 using Services.MealPlanServices;
-using EasyCaching.Core.Configurations;
-using System.Configuration;
-using AspNetCoreHero.ToastNotification;
-using AspNetCoreHero.ToastNotification.Extensions;
-using Domain.DTO;
-
+using System.Net;
+using System.Text;
+using Web.Hubs;
 
 namespace DietPlanner
 {
@@ -23,7 +22,8 @@ namespace DietPlanner
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddStackExchangeRedisCache(options =>
-            {options.Configuration = "localhost:6379";
+            {
+                options.Configuration = "localhost:6379";
             });
 
             builder.Services.AddNotyf(config =>
@@ -31,34 +31,37 @@ namespace DietPlanner
                 config.DurationInSeconds = 10;
                 config.IsDismissable = true;
                 config.Position = NotyfPosition.TopCenter;
-            }
-);
+            });
+
+
             builder.Services.AddSession();
 
             builder.Services.AddTransient<Validation>();
-            builder.Services.AddTransient<UserDetailRepository>();
 
-            builder.Services.AddScoped<Services.Upload>();
+            builder.Services.AddScoped<Upload>();
             builder.Services.AddScoped<MealInfoSummarize>();
-            builder.Services.AddScoped<MealDetailRepository>();
-            builder.Services.AddScoped<ChallengesRewardRepository>();
-            builder.Services.AddScoped<ProfileDetailRepository>();
-            builder.Services.AddScoped<MealPlanRepository>();
+            builder.Services.AddScoped<IProfileDetailRepository,ProfileDetailRepository>();
+            builder.Services.AddScoped<IMealDetailRepository, MealDetailRepository>();
+            builder.Services.AddScoped<IMealPlanRepository, MealPlanRepository>();
+            builder.Services.AddScoped<IChallengeRewardRepository, ChallengesRewardRepository>();
+            builder.Services.AddScoped<IUserDetailRepository, UserDetailRepository>();
+
+            builder.Services.AddHostedService<BackgroundService>();
 
             builder.Services.AddControllersWithViews();
-            
+            builder.Services.AddSignalR();
+
+
             //Adding Dbcontext 
             builder.Services.AddDbContext<DietContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            //adding radis caching
-            
 
             //Adding Authentication
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options => 
+            }).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -71,6 +74,8 @@ namespace DietPlanner
                 };
             });
 
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -78,7 +83,7 @@ namespace DietPlanner
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts( );
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
@@ -120,7 +125,14 @@ namespace DietPlanner
                 name: "default",
                 pattern: "{controller=Auth}/{action=SignIn}/{id?}");
 
+
+            // Mapping the Feed Chat
+            app.MapHub<ChatHub>("/chatHub");
+
+
             app.Run();
         }
+
+
     }
 }

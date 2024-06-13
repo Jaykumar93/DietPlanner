@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 
 
@@ -9,7 +10,8 @@ namespace Repository.Interfaces
         public void AddUserDetail(TblUserDetail userDetail);
 
         public TblUserDetail GetUserDetailByEmail(string email);
+        public TblUserDetail GetUserDetailByUser(string Username);
+  
 
-        public List<TblUserDetail> GetAllUserDetails();
     }
 }

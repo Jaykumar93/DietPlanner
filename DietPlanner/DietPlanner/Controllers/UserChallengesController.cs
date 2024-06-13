@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Security.Claims;
+using Repository;
+using Repository.Interfaces;
 
 namespace Web.Controllers
 {
@@ -13,33 +15,19 @@ namespace Web.Controllers
     {
         private readonly DietContext _context;
         private readonly INotyfService _notyf;
+        private readonly IChallengeRewardRepository _challengeRewardRepository;
 
-        public UserChallengesController(DietContext context, INotyfService notyf) 
+        public UserChallengesController(DietContext context, INotyfService notyf, IChallengeRewardRepository challengeRewardRepository) 
         {
             _context = context;
             _notyf = notyf;
-        }
+            _challengeRewardRepository = challengeRewardRepository;
+        } 
         public IActionResult ChallengeDashboard(List<ChallengesRewardViewModel.ChallengeStatus> selectedCategories,DateTime? startDate, DateTime? endDate, string term = "", string orderBy = "")
         {
             term = term.ToLower();
-            var allChallenges = _context.TblChallenges.ToList();
-            
-            var ChallengesList = allChallenges.Select(challenge =>
-            {
-                return new ChallengesRewardViewModel
-                {
-                    ChallengeName = challenge.ChallengeName,
-                    ChallengeDescription = challenge.ChallengeDescription,
-                    ChallengeGoals = challenge.ChallengeGoals,
-                    StartDatetime = challenge.StartDatetime,
-                    EndDatetime = challenge.EndDatetime,
-                   
-                    ChallengeImgLocation = challenge.ChallengeImagePath,
-                    RewardImgLocation = _context.TblRewards.Where(reward => reward.ChallengeId == challenge.ChallengeId).Select(reward => reward.RewardImagePath).FirstOrDefault(),
-                    RewardDescription = _context.TblRewards.Where(reward => reward.ChallengeId == challenge.ChallengeId).Select(reward => reward.RewardDescription).FirstOrDefault()
-                    
-                };
-            });
+            var ChallengesList = _challengeRewardRepository.GetChallengesBasedOnStatus(ChallengesRewardViewModel.ChallengeStatus.Ongoing, ChallengesRewardViewModel.ChallengeStatus.NotStarted);
+
             var claims = HttpContext.User.Claims;
             string Email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
             var profileId = (from user in _context.TblUserDetails
@@ -86,9 +74,25 @@ namespace Web.Controllers
             {
                 ChallengesList = ChallengesList.Where(c => c.ChallengeName.ToLower().Contains(term) ||
                                                 c.ChallengeDescription.ToLower().Contains(term) ||
-                                                c.ChallengeGoals.ToString().Contains(term) ||
+                                                /*c.ChallengeGoals.ToString().Contains(term) ||*/
                                                 c.RewardDescription.ToLower().Contains(term));
             }
+            int registeredChallengesCount = challengesLog.Count(log =>
+                 log.Status == ChallengesRewardViewModel.UserChallengeStatus.Completed.ToString() ||
+                 log.Status == ChallengesRewardViewModel.UserChallengeStatus.Registered.ToString() ||
+                 log.Status == ChallengesRewardViewModel.UserChallengeStatus.OnGoing.ToString());
+
+
+            int completedChallengesCount = challengesLog.Count(log => log.Status == ChallengesRewardViewModel.UserChallengeStatus.Completed.ToString());
+            int rewardChallengesCount = challengesLog.Count(log =>log.Status == ChallengesRewardViewModel.UserChallengeStatus.Registered.ToString() && log.RewardId != null);
+
+            int totalChallengeCount = ChallengesList.Count();
+            ViewData["TotalChallengeCount"] = totalChallengeCount;
+
+            ViewData["RegisteredChallengesCount"] = registeredChallengesCount;
+            ViewData["CompletedChallengesCount"] = completedChallengesCount;
+            ViewData["RewardChallengesCount"] = rewardChallengesCount;
+
             return View(ChallengesList);
         }
 
@@ -105,12 +109,21 @@ namespace Web.Controllers
             var challengeRewardLog = _context.TblChallengesRewardsLogs
            .Where(challenge => challenge.ChallengeId == challengeDetails.ChallengeId && challenge.ProfileId == profileId)
            .FirstOrDefault();
+
+            Dictionary<string, string> ChallengeGoals = JsonConvert.DeserializeObject<Dictionary<string, string>>(challengeDetails.ChallengeGoals);
+
             ChallengesRewardViewModel challengeModel = new ChallengesRewardViewModel
             {
                 ChallengeId = challengeDetails.ChallengeId,
                 ChallengeName = challengeName,
                 ChallengeDescription = challengeDetails.ChallengeDescription,
-                ChallengeGoals = challengeDetails.ChallengeGoals,
+                CalorieCountGoal = int.Parse(ChallengeGoals.GetValueOrDefault("CalorieCountGoal", "0")),
+                VitaminGoals = ChallengeGoals.GetValueOrDefault("VitaminGoals", "None"),
+                MineralsGoals = ChallengeGoals.GetValueOrDefault("MineralsGoals", "None"),
+                ProteinGoals = int.Parse(ChallengeGoals.GetValueOrDefault("ProteinGoals", "0")),
+                FatGoals = int.Parse(ChallengeGoals.GetValueOrDefault("MealFat", "0")),
+                CarbohydratesGoals = int.Parse(ChallengeGoals.GetValueOrDefault("CarbohydratesGoals", "0")),
+                WaterGoals = int.Parse(ChallengeGoals.GetValueOrDefault("WaterGoals", "0")),
                 StartDatetime = challengeDetails.StartDatetime,
                 EndDatetime = challengeDetails.EndDatetime,
                 ChallengeImgLocation = challengeDetails.ChallengeImagePath,
@@ -125,22 +138,36 @@ namespace Web.Controllers
 
         public async Task<IActionResult> AddChallengeToUser(Guid ChallengeId, string UserName)
         {
+
+
             var user = await _context.TblUserDetails.Where(user=>user.UserName == UserName).FirstOrDefaultAsync();
             var profile = await _context.TblProfileDetails.Where(profile => profile.UserId == user.UserId).FirstOrDefaultAsync();
             var challenge = await _context.TblChallenges.Where(challenge => challenge.ChallengeId == ChallengeId).FirstOrDefaultAsync();
-            TblChallengesRewardsLog ChallengeRewardLog = new TblChallengesRewardsLog
-            {
-                ProfileId = profile.ProfileId,
-                ChallengeId = ChallengeId,
-                Status = ChallengesRewardViewModel.UserChallengeStatus.Registered.ToString(),
-                StatusDatetime = DateTime.Now,
-                RewardId = _context.TblRewards.Where(reward => reward.ChallengeId == ChallengeId).Select(reward => reward.RewardId).FirstOrDefault(),
-            };
-            await _context.TblChallengesRewardsLogs.AddAsync(ChallengeRewardLog);
-            await _context.SaveChangesAsync();
-            return Json(new { success = true, message = $"{challenge.ChallengeName} Challenge is Added to Your Profile {UserName}" });
 
-                
+            bool isProfileInChallengeLog = await _context.TblChallengesRewardsLogs.AnyAsync(log => log.ProfileId == profile.ProfileId && log.ChallengeId == challenge.ChallengeId);
+
+            if(isProfileInChallengeLog == false)
+            {
+                TblChallengesRewardsLog ChallengeRewardLog = new TblChallengesRewardsLog
+                {
+                    ProfileId = profile.ProfileId,
+                    ChallengeId = ChallengeId,
+                    Status = ChallengesRewardViewModel.UserChallengeStatus.Registered.ToString(),
+                    StatusDatetime = DateTime.Now,
+                    RewardId = null,
+                };
+                await _context.TblChallengesRewardsLogs.AddAsync(ChallengeRewardLog);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true, message = $"{challenge.ChallengeName} Challenge is Added to Your Profile {UserName}" });
+            }
+            else
+            {
+                return Json(new { success = true, message = $"{challenge.ChallengeName} Challenge is Already Added to Your Profile {UserName}" });
+
+            }
+
+
+
         }
     }
 }

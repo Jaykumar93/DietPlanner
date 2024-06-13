@@ -22,7 +22,18 @@
         </div>
     </div>
 </div>
+@{
+    // Retrieve the counts from ViewData
+    int registeredChallengesCount = ViewData["RegisteredChallengesCount"] != null ? (int)ViewData["RegisteredChallengesCount"] : 0;
+    int totalChallengeCount = ViewData["TotalChallengeCount"] != null ? (int)ViewData["TotalChallengeCount"] : 1; 
+    int completedChallengesCount = ViewData["CompletedChallengesCount"] != null ? (int)ViewData["CompletedChallengesCount"] : 1;
+    int rewardChallengesCount = ViewData["RewardChallengesCount"] != null ? (int)ViewData["RewardChallengesCount"] : 1; // Avoid division by zero
 
+    // Calculate the progress percentage
+    double RegisterProgress = ((double)registeredChallengesCount / totalChallengeCount) * 100;
+    double CompleteProgress = ((double)completedChallengesCount / totalChallengeCount) * 100;
+    double RewardProgress = ((double)rewardChallengesCount / totalChallengeCount) * 100;
+}
 <div class="container box">
     <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="block l-bg-blue-dark">
@@ -33,12 +44,16 @@
                 </div>
                 <div class="row align-items-center mb-2 d-flex">
                     <div class="col-8">
-                        <h2 class="d-flex align-items-center mb-0">15.07k</h2>
+                        <h2 class="d-flex align-items-center mb-0">@ViewData["RegisteredChallengesCount"]</h2>
                     </div>
-                
                 </div>
                 <div class="progress mt-1" data-height="8" style="height: 8px;">
-                    <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    <div class="progress-bar l-bg-green" role="progressbar"
+                         data-width="@RegisterProgress%"
+                         aria-valuenow="@RegisterProgress"
+                         aria-valuemin="0" aria-valuemax="100"
+                         style="width: @RegisterProgress%">
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,12 +67,17 @@
                 </div>
                 <div class="row align-items-center mb-2 d-flex">
                     <div class="col-8">
-                        <h2 class="d-flex align-items-center mb-0">578</h2>
+                        <h2 class="d-flex align-items-center mb-0">@ViewData["CompletedChallengesCount"]</h2>
                     </div>
                     
                 </div>
                 <div class="progress mt-1" data-height="8" style="height: 8px;">
-                    <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    <div class="progress-bar l-bg-orange" role="progressbar"
+                         data-width="@CompleteProgress%"
+                         aria-valuenow="@CompleteProgress"
+                         aria-valuemin="0" aria-valuemax="100"
+                         style="width: @CompleteProgress%">
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,12 +91,19 @@
                 </div>
                 <div class="row align-items-center mb-2 d-flex">
                     <div class="col-8">
-                        <h2 class="d-flex align-items-center mb-0">$11.61k</h2>
+                        <h2 class="d-flex align-items-center mb-0">@ViewData["RewardChallengesCount"]</h2>
                     </div>
                     
                 </div>
                 <div class="progress mt-1" data-height="8" style="height: 8px;">
-                    <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    <div class="progress mt-1" data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar"
+                             data-width="@RewardProgress%"
+                             aria-valuenow="@RewardProgress"
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width: @RewardProgress%">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -143,7 +170,15 @@
                         <h4 class="card-title">@challenge.ChallengeName</h4>
                         <p class="card-text">@challenge.ChallengeDescription</p>
                         <p class="card-text" style="font-weight: bold">Challenge Goal:</p>
-                        <p class="card-text">@challenge.ChallengeGoals</p>
+                        <p class="card-text">Calorie Count Goal : @challenge.CalorieCountGoal</p>
+                        <p class="card-text">Vitamin Goals : @challenge.VitaminGoals</p>
+                        <p class="card-text">Minerals Goals : @challenge.MineralsGoals</p>
+                        <p class="card-text">Protein Goals : @challenge.ProteinGoals</p>
+                        <p class="card-text">Fat Goals : @challenge.FatGoals</p>
+                        <p class="card-text">Carbohydrates Goals : @challenge.CarbohydratesGoals</p>
+                        <p class="card-text">Water Goals : @challenge.WaterGoals</p>
+
+
                         <p class="card-text" style="font-weight: bold">Start Time:</p>
                         <p class="card-text">@challenge.StartDatetime</p>
                         <p class="card-text" style="font-weight: bold">End Time:</p>
