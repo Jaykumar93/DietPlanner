@@ -37,10 +37,6 @@ public partial class TblProfileDetail
 
     public virtual ICollection<TblChallengesRewardsLog> TblChallengesRewardsLogs { get; set; } = new List<TblChallengesRewardsLog>();
 
-    public virtual ICollection<TblConsultation> TblConsultationExpertProfiles { get; set; } = new List<TblConsultation>();
-
-    public virtual ICollection<TblConsultation> TblConsultationUserProfiles { get; set; } = new List<TblConsultation>();
-
     public virtual ICollection<TblPostComment> TblPostComments { get; set; } = new List<TblPostComment>();
 
     public virtual ICollection<TblPostLike> TblPostLikes { get; set; } = new List<TblPostLike>();

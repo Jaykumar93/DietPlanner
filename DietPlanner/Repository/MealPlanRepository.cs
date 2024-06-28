@@ -7,7 +7,6 @@ using Services;
 using Services.MealPlanServices;
 using System.Data;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interfaces;
 

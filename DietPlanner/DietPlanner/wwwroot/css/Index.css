@@ -6,20 +6,21 @@
     width: 100%;
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
     padding-bottom: 24px;
     margin-top: 36px;
 }
 
 .grid-item {
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
+    align-items: start; /* Align items at the center horizontally */
+    justify-content: flex-start; /* Align items at the start vertically */
+    /* Optionally, you can add styles like box-shadow and padding here */
 }
 
 .full-width {
-    grid-column: span 4;
+    grid-column: span 2; /* Changed to span 2 columns */
 }
 
 .height-100 {

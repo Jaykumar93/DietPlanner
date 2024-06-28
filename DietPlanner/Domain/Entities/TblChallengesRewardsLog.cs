@@ -17,6 +17,8 @@ public partial class TblChallengesRewardsLog
 
     public string? Status { get; set; }
 
+    public double? ChallengeProgress { get; set; }
+
     public virtual TblChallenge? Challenge { get; set; }
 
     public virtual TblProfileDetail Profile { get; set; } = null!;

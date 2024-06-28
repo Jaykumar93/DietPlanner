@@ -11,12 +11,27 @@
         @TempData["Successful"]
     </div>
 }
+<style>
 
+    .griding-item {
+        display: flex;
+        flex-direction: column; 
+        align-items: start; 
+        justify-content: flex-start; 
+    }
+</style>
 <div class="height-100 pt-4">
     <h1>Dashboard</h1>
     <div class="grid">
-        <div class="grid-item" id="partialViewContainer">
+        <div class="griding-item" id="partialViewContainer">
             <!-- Partial view content will be loaded here -->
+        </div>
+        
+        <div class="griding-item">
+            <h3>Challenges </h3>
+            <div id="ongoing-challenges-container">
+                <!-- Partial view content will be loaded here -->
+            </div>
         </div>
 
     </div>
@@ -25,10 +40,28 @@
     </div>
 </div>
 
+
 <script src="~/js/Layout.js" asp-append-version="true"></script>
 
 @section Scripts {
     <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/Home/OngoingChallenges',
+                type: 'GET',
+                success: function (data) {
+                    $('#ongoing-challenges-container').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error loading ongoing challenges:', error);
+                    $('#ongoing-challenges-container').html('<p>Error loading ongoing challenges. Please try again later.</p>');
+                }
+            });
+        });
+    </script>
+    <script>
+       
+
         window.onload = function () {
             var chartData = @Html.Raw(ViewBag.Data);
 
@@ -54,6 +87,9 @@
 
 
 <script type="text/javascript">
+
+   
+
     $(document).ready(function () {
         var userName;
 

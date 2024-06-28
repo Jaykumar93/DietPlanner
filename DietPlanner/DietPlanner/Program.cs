@@ -36,10 +36,11 @@ namespace DietPlanner
 
             builder.Services.AddSession();
 
-            builder.Services.AddTransient<Validation>();
+            builder.Services.AddScoped<Validation>();
 
             builder.Services.AddScoped<Upload>();
             builder.Services.AddScoped<MealInfoSummarize>();
+
             builder.Services.AddScoped<IProfileDetailRepository,ProfileDetailRepository>();
             builder.Services.AddScoped<IMealDetailRepository, MealDetailRepository>();
             builder.Services.AddScoped<IMealPlanRepository, MealPlanRepository>();
@@ -120,6 +121,7 @@ namespace DietPlanner
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.MapHub<ChatHub>("/ChatHub");
 
             app.MapControllerRoute(
                 name: "default",
@@ -127,7 +129,6 @@ namespace DietPlanner
 
 
             // Mapping the Feed Chat
-            app.MapHub<ChatHub>("/chatHub");
 
 
             app.Run();

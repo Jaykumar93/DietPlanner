@@ -1,4 +1,5 @@
 ﻿@model Domain.DTO.ChallengesRewardViewModel;
+<link href="~/css/ChallengesRewardView.css" rel="stylesheet" />
 <style>
     .article-wrapper {
         display: flex;
@@ -131,6 +132,9 @@
                 <h2>@Model.ChallengeName</h2>
                 <h6>@Model.UserStatus</h6>
             </div>
+            <div class="text-decoration-underline"></div>
+            <h6>Progress : @Model.UserChallengeProgress%</h6>
+
             <p>Start Time: @Model.StartDatetime</p>
             <p>End Time: @Model.EndDatetime</p>
             <div class="text-decoration-underline"></div>
@@ -140,13 +144,8 @@
             <div class="text-decoration-underline"></div>
 
             <h6>Challenge Goals:</h6>
-            <p>Calorie Count Goal : @Model.CalorieCountGoal</p>
-            <p>Vitamin Goals : @Model.VitaminGoals</p>
-            <p>Minerals Goals : @Model.MineralsGoals</p>
-            <p>Protein Goals : @Model.ProteinGoals</p>
-            <p>Fat Goals : @Model.FatGoals</p>
-            <p>Carbohydrates Goals : @Model.CarbohydratesGoals</p>
-            <p>Water Goals : @Model.WaterGoals</p>
+            <p>Calorie Count Goal : @Model.ChallengeGoals</p>
+            
             <div class="text-decoration-underline"></div>
             <div class="Reward-Info">
                

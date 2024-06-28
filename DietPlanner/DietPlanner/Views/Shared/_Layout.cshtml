@@ -33,9 +33,9 @@
                     <li>
                         <a asp-controller="ProfileDetail" asp-action="ViewProfile"><i class="bx bx-user"></i>&nbsp;Profile</a>
                     </li>
-                    <li>
+                   @*  <li>
                         <a href="#"><i class="bx bx-help-circle"></i>&nbsp;Help</a>
-                    </li>
+                    </li> *@
                     <li>
                         <a asp-controller="Auth" asp-action="Logout"><i class="bx bx-log-out ph-sign-out"></i>&nbsp;Sign Out</a>
                     </li>
@@ -70,21 +70,13 @@
                         <i class='bx bx-cycling'></i>                        
                         <span class="nav_name">Activity Tracking</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a asp-controller="RoleBasedRedirection" asp-action="FeedRedirection" class="nav_link">
                         <i class="bx bx-message-square-detail nav_icon"></i>
                         <span class="nav_name">Feeds</span>
-                    </a>
-                    <a href="#" class="nav_link">
-                        <i class="bx bxs-injection nav_icon"></i>
-                        <span class="nav_name">Expert Help</span>
-                    </a>
+                    </a> 
                 </div>
             </div>
-            <a href="#" class="nav_link">
-                <i class="bx bxs-phone-call nav_icon"></i>
-
-                <span class="nav_name">Contact Us</span>
-            </a>
+            
         </nav>
     </div>
 

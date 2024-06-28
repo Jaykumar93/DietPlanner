@@ -15,7 +15,7 @@ namespace Repository
         private readonly Domain.Data.DietContext _context;
         private readonly Upload _upload;
 
-        public MealDetailRepository(DietContext context,Upload upload)
+        public MealDetailRepository(Domain.Data.DietContext context,Upload upload)
         {
             _context = context;
             _upload = upload;

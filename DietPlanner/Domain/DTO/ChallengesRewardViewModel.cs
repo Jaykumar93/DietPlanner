@@ -56,24 +56,17 @@ namespace Domain.DTO
             Ongoing,
             Ended
         }
-        
+
         public Guid? ChallengeId { get; set; }
         public string? ChallengeName { get; set; }
-        
+
         public string ChallengeDescription { get; set; } = null!;
 
         public DateTime StartDatetime { get; set; }
 
         public DateTime EndDatetime { get; set; }
 
-        public int? CalorieCountGoal { get; set; }
-
-        public string? VitaminGoals { get; set; } = null!;
-        public string? MineralsGoals { get; set; } = null!;
-        public int? ProteinGoals { get; set; }
-        public int? FatGoals { get; set; }
-        public int? CarbohydratesGoals { get; set; }
-        public int? WaterGoals { get; set; }
+        public string ChallengeGoals { get; set; } = null!;
 
         public IFormFile? ChallengeImagePath { get; set; }
         public string? ChallengeImgLocation { get; set; }
@@ -87,9 +80,13 @@ namespace Domain.DTO
 
         public Guid ProfileId { get; set; }
 
-        public UserChallengeStatus? UserStatus { get; set; } 
+        public double? UserChallengeProgress {  get; set; }
 
-        public ChallengeStatus? StatusOfChallenge { get; set; }
+        public UserChallengeStatus? UserStatus { get; set; }
+        public ChallengeStatus? AdminStatus { get; set; }
+
+        public ChallengeStatus? Challenge { get; set; }
     }
 
+    
 }

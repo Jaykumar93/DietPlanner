@@ -42,7 +42,6 @@ namespace Web.Controllers
             try
             {
                 var userInfo = _context.TblUserDetails.FirstOrDefault(user => user.Email == login.Email);
-                var profileInfo = _context.TblProfileDetails.FirstOrDefault(profile => profile.UserId == userInfo.UserId);
                 if (userInfo == null)
                 {
                     // User not found
@@ -51,6 +50,8 @@ namespace Web.Controllers
                 }
                 else
                 {
+                    var profileInfo = _context.TblProfileDetails.FirstOrDefault(profile => profile.UserId == userInfo.UserId);
+
                     var encryptedPass = Authentication.Checking(login.Password, _config["PasswordKey"], userInfo.PasswordSalt);
 
                     if (encryptedPass == userInfo.PasswordHash)
@@ -157,6 +158,7 @@ namespace Web.Controllers
         {
             //HttpContext.Response.Cookies.Delete("JWTToken");
             Response.Cookies.Delete("JwtToken");
+            _notyf.Success("You are Successfully Logged Out.");
             return RedirectToAction("SignIn", "Auth");
         }
 

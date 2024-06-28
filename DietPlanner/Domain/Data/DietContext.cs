@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Data;
 
@@ -21,8 +21,6 @@ public partial class DietContext : DbContext
     public virtual DbSet<TblChallenge> TblChallenges { get; set; }
 
     public virtual DbSet<TblChallengesRewardsLog> TblChallengesRewardsLogs { get; set; }
-
-    public virtual DbSet<TblConsultation> TblConsultations { get; set; }
 
     public virtual DbSet<TblMeal> TblMeals { get; set; }
 
@@ -123,6 +121,7 @@ public partial class DietContext : DbContext
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("challenge_log_id");
             entity.Property(e => e.ChallengeId).HasColumnName("challenge_id");
+            entity.Property(e => e.ChallengeProgress).HasColumnName("challenge_progress");
             entity.Property(e => e.ProfileId).HasColumnName("profile_id");
             entity.Property(e => e.RewardId).HasColumnName("reward_id");
             entity.Property(e => e.Status)
@@ -145,37 +144,6 @@ public partial class DietContext : DbContext
             entity.HasOne(d => d.Reward).WithMany(p => p.TblChallengesRewardsLogs)
                 .HasForeignKey(d => d.RewardId)
                 .HasConstraintName("FK__tbl_Chall__rewar__24B26D99");
-        });
-
-        modelBuilder.Entity<TblConsultation>(entity =>
-        {
-            entity.HasKey(e => e.ConsultationId).HasName("PK__tbl_cons__650FE0FB17264E4A");
-
-            entity.ToTable("tbl_consultation");
-
-            entity.Property(e => e.ConsultationId)
-                .HasDefaultValueSql("(newid())")
-                .HasColumnName("consultation_id");
-            entity.Property(e => e.AppointmentDateTime)
-                .HasColumnType("datetime")
-                .HasColumnName("appointment_date_time");
-            entity.Property(e => e.AppointmentDuration).HasColumnName("appointment_duration");
-            entity.Property(e => e.ConsultantAvailabilty)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("consultant_availabilty");
-            entity.Property(e => e.ExpertProfileId).HasColumnName("expert_profile_id");
-            entity.Property(e => e.UserProfileId).HasColumnName("user_profile_id");
-
-            entity.HasOne(d => d.ExpertProfile).WithMany(p => p.TblConsultationExpertProfiles)
-                .HasForeignKey(d => d.ExpertProfileId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_consu__exper__00750D23");
-
-            entity.HasOne(d => d.UserProfile).WithMany(p => p.TblConsultationUserProfiles)
-                .HasForeignKey(d => d.UserProfileId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_consu__user___7F80E8EA");
         });
 
         modelBuilder.Entity<TblMeal>(entity =>

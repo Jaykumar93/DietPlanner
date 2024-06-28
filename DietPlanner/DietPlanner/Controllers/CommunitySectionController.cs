@@ -2,9 +2,9 @@
 
 namespace Web.Controllers
 {
-    public class FeedSectionController : Controller
+    public class CommunitySectionController : Controller
     {
-        public IActionResult PublicFeed()
+        public IActionResult Feed()
         {
             return View();
         }

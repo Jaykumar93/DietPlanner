@@ -165,18 +165,14 @@
                     <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
                     <div class="card-custom-avatar">
                         <img class="img-fluid" src="@Url.Content(challenge.ChallengeImgLocation)" alt="Avatar" style="max-width: 100px; max-height: 100px;" />
+
                     </div>
                     <div class="card-body" style="overflow-y: auto">
                         <h4 class="card-title">@challenge.ChallengeName</h4>
                         <p class="card-text">@challenge.ChallengeDescription</p>
                         <p class="card-text" style="font-weight: bold">Challenge Goal:</p>
-                        <p class="card-text">Calorie Count Goal : @challenge.CalorieCountGoal</p>
-                        <p class="card-text">Vitamin Goals : @challenge.VitaminGoals</p>
-                        <p class="card-text">Minerals Goals : @challenge.MineralsGoals</p>
-                        <p class="card-text">Protein Goals : @challenge.ProteinGoals</p>
-                        <p class="card-text">Fat Goals : @challenge.FatGoals</p>
-                        <p class="card-text">Carbohydrates Goals : @challenge.CarbohydratesGoals</p>
-                        <p class="card-text">Water Goals : @challenge.WaterGoals</p>
+                        <p class="card-text">Calorie Count Goal : @challenge.ChallengeGoals</p>
+                        
 
 
                         <p class="card-text" style="font-weight: bold">Start Time:</p>
@@ -184,9 +180,11 @@
                         <p class="card-text" style="font-weight: bold">End Time:</p>
                         <p class="card-text">@challenge.EndDatetime</p>
                     </div>
+                    
                     <div class="card-footer" style="background: inherit; border-color: inherit;">
                         <a href="javascript:void(0);" Challenge-Name="@challenge.ChallengeName" class="anchorDetail btn btn-outline-primary">View Details</a>
                     </div>
+                    
                 </div>
             </div>
         }

@@ -43,6 +43,7 @@ namespace Domain.DTO
             {
                 yield return new ValidationResult("Username is required.", new[] { nameof(UserName) });
             }
+
             //Email
             if (string.IsNullOrEmpty(Email) || string.IsNullOrWhiteSpace(Email))
             {
@@ -66,6 +67,10 @@ namespace Domain.DTO
                 {
                     yield return new ValidationResult("Password should have atleast a capital , small and digit and should " +
                         "be greater than 8 and less than 20 letters.", new[] { nameof(Password) });
+                }
+                if ((Password != ConfirmPassword))
+                {
+                    yield return new ValidationResult("Password and Confirm Password are not Same", new[] { nameof(Password) });
                 }
             }
 

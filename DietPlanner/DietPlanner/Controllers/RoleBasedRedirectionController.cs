@@ -89,6 +89,25 @@ namespace Web.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> FeedRedirection()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var claims = HttpContext.User.Claims;
+                string roles = claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+                if (roles.Contains("Admin"))
+                {
+                    return RedirectToAction("PublicFeed", "Feed");
+                }
+                else if (roles.Contains("User"))
+                {
+                    return RedirectToAction("PublicFeed", "Feed");
+                }
+
+            }
+            return View();
+        }
     }
    
 }

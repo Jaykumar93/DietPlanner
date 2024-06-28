@@ -285,3 +285,4 @@ C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\Coditas-Admin\Documents\Diet Planning Project\Main\DietApp\DietPlanner\DietPlanner\bin\Debug\net8.0\libman.json

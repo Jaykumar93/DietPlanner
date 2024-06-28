@@ -2,20 +2,19 @@
 using Domain.DTO;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using Repository.Interfaces;
 using Services;
-using static Domain.DTO.ChallengesRewardViewModel;
+using System.Security.Claims;
 
 
 namespace Repository
 {
     public class ChallengesRewardRepository : IChallengeRewardRepository
     {
-        private readonly Domain.Data.DietContext _context;
+        private readonly DietContext _context;
         private readonly Upload _upload;
 
-        public ChallengesRewardRepository(Domain.Data.DietContext context, Upload upload)
+        public ChallengesRewardRepository(DietContext context, Upload upload)
         {
             _context = context;
             _upload = upload;
@@ -27,25 +26,23 @@ namespace Repository
 
             var ChallengesList = allChallenges.Select(challenge =>
             {
-                Dictionary<string, string> ChallengeGoals = JsonConvert.DeserializeObject<Dictionary<string, string>>(challenge.ChallengeGoals);
-
                 return new ChallengesRewardViewModel
                 {
+                    ChallengeId = challenge.ChallengeId,    
                     ChallengeName = challenge.ChallengeName,
                     ChallengeDescription = challenge.ChallengeDescription,
-                    CalorieCountGoal = int.Parse(ChallengeGoals.GetValueOrDefault("CalorieCountGoal", "0")),
-                    VitaminGoals = ChallengeGoals.GetValueOrDefault("VitaminGoals", "None"),
-                    MineralsGoals = ChallengeGoals.GetValueOrDefault("MineralsGoals", "None"),
-                    ProteinGoals = int.Parse(ChallengeGoals.GetValueOrDefault("ProteinGoals", "0")),
-                    FatGoals = int.Parse(ChallengeGoals.GetValueOrDefault("MealFat", "0")),
-                    CarbohydratesGoals = int.Parse(ChallengeGoals.GetValueOrDefault("CarbohydratesGoals", "0")),
-                    WaterGoals = int.Parse(ChallengeGoals.GetValueOrDefault("WaterGoals", "0")),
+                    ChallengeGoals = challenge.ChallengeGoals,
                     StartDatetime = challenge.StartDatetime,
                     EndDatetime = challenge.EndDatetime,
-                    StatusOfChallenge = (ChallengesRewardViewModel.ChallengeStatus)Enum.Parse(typeof(ChallengesRewardViewModel.ChallengeStatus), challenge.ChallengeStatus),
-                    RewardDescription = _context.TblRewards.Where(reward => reward.ChallengeId == challenge.ChallengeId).Select(reward => reward.RewardDescription).FirstOrDefault()
+                    ChallengeImgLocation = challenge.ChallengeImagePath,
+                    RewardImgLocation = _context.TblRewards.Where(reward => reward.ChallengeId == challenge.ChallengeId).Select(reward => reward.RewardImagePath).FirstOrDefault(),
+                    RewardDescription = _context.TblRewards.Where(reward => reward.ChallengeId == challenge.ChallengeId).Select(reward => reward.RewardDescription).FirstOrDefault(),
+
+                    AdminStatus = (ChallengesRewardViewModel.ChallengeStatus)Enum.Parse(typeof(ChallengesRewardViewModel.ChallengeStatus), challenge.ChallengeStatus)
+
+
                 };
-            });
+            }).ToList();
             return ChallengesList;
         }
 
@@ -54,30 +51,15 @@ namespace Repository
             DateTime currentDate = DateTime.Today;
 
             string challengeimagePath = await _upload.UploadChallengeImage(model.ChallengeImagePath);
-            string rewardimagePath = await _upload.UploadRewardImage(model. RewardImagePath);
-
-            var ChallengeGoals = new
-            {
-                model.CalorieCountGoal,
-                model.VitaminGoals,
-                model.MineralsGoals,
-                model.ProteinGoals,
-                model.FatGoals,
-                model.CarbohydratesGoals,
-                model.WaterGoals
-
-            };
-            string SerilizedInfo = JsonConvert.SerializeObject(ChallengeGoals);
-
+            string rewardimagePath = await _upload.UploadRewardImage(model.RewardImagePath);
 
             TblChallenge challenge = new TblChallenge
             {
                 ChallengeName = model.ChallengeName,
                 ChallengeDescription = model.ChallengeDescription,
-                ChallengeGoals = SerilizedInfo,
+                ChallengeGoals = model.ChallengeGoals,
                 StartDatetime = model.StartDatetime,
                 EndDatetime = model.EndDatetime,
-                ChallengeStatus = ChallengesRewardViewModel.ChallengeStatus.NotStarted.ToString(),
                 ChallengeImagePath = challengeimagePath,
 
             };
@@ -99,6 +81,7 @@ namespace Repository
             return true;
         }
 
+
         public IEnumerable<ChallengesRewardViewModel> GetChallengesBasedOnStatus(ChallengesRewardViewModel.ChallengeStatus Status1, ChallengesRewardViewModel.ChallengeStatus Status2)
         {
             var allChallenges = _context.TblChallenges
@@ -110,19 +93,12 @@ namespace Repository
 
             var ChallengesList = allChallenges.Select(challenge =>
             {
-                Dictionary<string, string> ChallengeGoals = JsonConvert.DeserializeObject<Dictionary<string, string>>(challenge.ChallengeGoals);
 
                 return new ChallengesRewardViewModel
                 {
                     ChallengeName = challenge.ChallengeName,
                     ChallengeDescription = challenge.ChallengeDescription,
-                    CalorieCountGoal = int.Parse(ChallengeGoals.GetValueOrDefault("CalorieCountGoal", "0")),
-                    VitaminGoals = ChallengeGoals.GetValueOrDefault("VitaminGoals", "None"),
-                    MineralsGoals = ChallengeGoals.GetValueOrDefault("MineralsGoals", "None"),
-                    ProteinGoals = int.Parse(ChallengeGoals.GetValueOrDefault("ProteinGoals", "0")),
-                    FatGoals = int.Parse(ChallengeGoals.GetValueOrDefault("MealFat", "0")),
-                    CarbohydratesGoals = int.Parse(ChallengeGoals.GetValueOrDefault("CarbohydratesGoals", "0")),
-                    WaterGoals = int.Parse(ChallengeGoals.GetValueOrDefault("WaterGoals", "0")),
+                    ChallengeGoals = challenge.ChallengeGoals,
                     StartDatetime = challenge.StartDatetime,
                     EndDatetime = challenge.EndDatetime,
 
@@ -140,19 +116,12 @@ namespace Repository
             var challengedetail = _context.TblChallenges.Where(challenge => challenge.ChallengeName == challengeName).FirstOrDefault();
             var rewarddetail = _context.TblRewards.Where(reward => reward.ChallengeId == challengedetail.ChallengeId).FirstOrDefault();
 
-            Dictionary<string, string> ChallengeGoals = JsonConvert.DeserializeObject<Dictionary<string, string>>(challengedetail.ChallengeGoals);
 
             ChallengesRewardViewModel ChallengeRewardDetail = new ChallengesRewardViewModel
             {
                 ChallengeName = challengedetail.ChallengeName,
                 ChallengeDescription = challengedetail.ChallengeDescription,
-                CalorieCountGoal = int.Parse(ChallengeGoals.GetValueOrDefault("CalorieCountGoal", "0")),
-                VitaminGoals = ChallengeGoals.GetValueOrDefault("VitaminGoals", "None"),
-                MineralsGoals = ChallengeGoals.GetValueOrDefault("MineralsGoals", "None"),
-                ProteinGoals = int.Parse(ChallengeGoals.GetValueOrDefault("ProteinGoals", "0")),
-                FatGoals = int.Parse(ChallengeGoals.GetValueOrDefault("MealFat", "0")),
-                CarbohydratesGoals = int.Parse(ChallengeGoals.GetValueOrDefault("CarbohydratesGoals", "0")),
-                WaterGoals = int.Parse(ChallengeGoals.GetValueOrDefault("WaterGoals", "0")),
+                ChallengeGoals = challengedetail.ChallengeGoals,
                 StartDatetime = challengedetail.StartDatetime,
                 EndDatetime = challengedetail.EndDatetime,
                 /*ChallengeStatus = (ChallengesRewardViewModel.StatusType)Enum.Parse(typeof(ChallengesRewardViewModel.StatusType), challengedetail.ChallengeStatus),*/
@@ -161,6 +130,31 @@ namespace Repository
             return ChallengeRewardDetail;
         }
 
+        public IEnumerable<ChallengesRewardViewModel> GetOngoingChallenges(IEnumerable<Claim> claims)
+        {
+            string email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var profileId = (from user in _context.TblUserDetails
+                             join profile in _context.TblProfileDetails on user.UserId equals profile.UserId
+                             where user.Email == email
+                             select profile.ProfileId).FirstOrDefault();
+
+            var challenges = GetAllChallenges().ToList();
+            var challengeLogs = _context.TblChallengesRewardsLogs
+                                   .Where(log => log.ProfileId == profileId && (log.Status == ChallengesRewardViewModel.UserChallengeStatus.OnGoing.ToString()
+                                   || log.Status == ChallengesRewardViewModel.UserChallengeStatus.Registered.ToString()))
+                                   .ToList();
+
+            var ongoingChallenges = from log in challengeLogs
+                                    join challenge in challenges
+                                    on log.ChallengeId equals challenge.ChallengeId
+                                    select new ChallengesRewardViewModel
+                                    {
+                                        ChallengeId = challenge.ChallengeId,
+                                        ChallengeName = challenge.ChallengeName,
+                                        UserChallengeProgress = log.ChallengeProgress
+                                    };
+            return ongoingChallenges;
+        }
         public async Task<bool> UpdateChallengeReward(ChallengesRewardViewModel UpdatedDetails)
         {
             DateTime currentDate = DateTime.Today;
@@ -168,13 +162,13 @@ namespace Repository
             var challengedetails = await _context.TblChallenges.FirstOrDefaultAsync(challenge => challenge.ChallengeName == UpdatedDetails.ChallengeName);
             var rewarddetails = await _context.TblRewards.FirstOrDefaultAsync(reward => reward.ChallengeId == challengedetails.ChallengeId);
 
-            string challengeimagePath= null;
+            string challengeimagePath = null;
             string rewardimagePath = null;
 
             if (UpdatedDetails.ChallengeImagePath != null)
             {
                 challengeimagePath = await _upload.UploadCertificate(UpdatedDetails.ChallengeImagePath);
-                
+
             }
             else
             {
@@ -189,26 +183,21 @@ namespace Repository
                 rewardimagePath = rewarddetails.RewardImagePath;
             }
 
-            var ChallengeGoals = new
-            {
-                UpdatedDetails.CalorieCountGoal,
-                UpdatedDetails.VitaminGoals,
-                UpdatedDetails.MineralsGoals,
-                UpdatedDetails.ProteinGoals,
-                UpdatedDetails.FatGoals,
-                UpdatedDetails.CarbohydratesGoals,
-                UpdatedDetails.WaterGoals
-
-            };
-            string SerilizedInfo = JsonConvert.SerializeObject(ChallengeGoals);
-
             if (challengedetails != null && rewarddetails != null)
             {
                 challengedetails.ChallengeName = UpdatedDetails.ChallengeName;
                 challengedetails.ChallengeDescription = UpdatedDetails.ChallengeDescription;
-                challengedetails.ChallengeGoals = SerilizedInfo;
+                challengedetails.ChallengeGoals = UpdatedDetails.ChallengeGoals;
                 challengedetails.StartDatetime = UpdatedDetails.StartDatetime;
                 challengedetails.EndDatetime = UpdatedDetails.EndDatetime;
+                /*if (UpdatedDetails.ChallengeStatus != null)
+                {
+                    challengedetails.ChallengeStatus = UpdatedDetails.ChallengeStatus.ToString();
+                }*/
+                /*else
+                {
+                    challengedetails.ChallengeStatus = challengedetails.ChallengeStatus;
+                }*/
                 rewarddetails.RewardDescription = UpdatedDetails.RewardDescription;
                 challengedetails.ChallengeImagePath = challengeimagePath;
                 rewarddetails.RewardImagePath = rewardimagePath;
@@ -226,13 +215,14 @@ namespace Repository
 
         }
 
+
         public async Task<bool> DeleteChallengeReard(string challengeName)
         {
-            var challengeDetail = _context.TblChallenges.Where(challenge => challenge.ChallengeName == challengeName).FirstOrDefault();
-            var rewardDetail = _context.TblRewards.Where(reward => reward.ChallengeId == challengeDetail.ChallengeId).FirstOrDefault();
+            var challengeDetail = await _context.TblChallenges.Where(challenge => challenge.ChallengeName == challengeName).FirstOrDefaultAsync();
+            var rewardDetail =await  _context.TblRewards.Where(reward => reward.ChallengeId == challengeDetail.ChallengeId).FirstOrDefaultAsync();
             _context.TblRewards.Remove(rewardDetail);
             _context.TblChallenges.Remove(challengeDetail);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
             return true;
         }
 

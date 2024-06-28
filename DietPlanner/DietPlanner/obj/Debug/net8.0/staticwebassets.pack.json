@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\MealImage\\32a8605f-7058-4018-b231-9fcea2c5dfda_Color Hunt Palette d9edbfff98002c786590d26d.png"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\MealImage\\351eceec-b274-4ada-bb85-b8325336a772_Chicken Fajitas.webp",
+      "PackagePath": "staticwebassets\\MealImage\\351eceec-b274-4ada-bb85-b8325336a772_Chicken Fajitas.webp"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\MealImage\\6199ad2d-5ae9-44e5-bd50-fb6b708ca7ec_Caesar Salad.jpg",
       "PackagePath": "staticwebassets\\MealImage\\6199ad2d-5ae9-44e5-bd50-fb6b708ca7ec_Caesar Salad.jpg"
     },
@@ -109,6 +113,10 @@
       "PackagePath": "staticwebassets\\MealImage\\d3024c6e-6c53-4b5d-98ed-17f8dd490b71_Banana Pancakes.jpg"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\MealImage\\e3485d59-4a67-4d48-b186-3377c8c1fc6c_Quinoa Salad.webp",
+      "PackagePath": "staticwebassets\\MealImage\\e3485d59-4a67-4d48-b186-3377c8c1fc6c_Quinoa Salad.webp"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\MealImage\\f5c94a6c-bdbe-4183-a371-5c56bd876dad_Almond Butter Toast.jpg",
       "PackagePath": "staticwebassets\\MealImage\\f5c94a6c-bdbe-4183-a371-5c56bd876dad_Almond Butter Toast.jpg"
     },
@@ -125,12 +133,24 @@
       "PackagePath": "staticwebassets\\ProfileImages\\639e9dd2-cbf0-4e76-89bf-a3eb41991fa4_wallpaperflare.com_wallpaper (1).jpg"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\ProfileImages\\a07f8503-7f24-45fe-acd1-89da6f41ca35_blank-profile-picture-973460_1280.png",
+      "PackagePath": "staticwebassets\\ProfileImages\\a07f8503-7f24-45fe-acd1-89da6f41ca35_blank-profile-picture-973460_1280.png"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\ProfileImages\\default-profile.png",
       "PackagePath": "staticwebassets\\ProfileImages\\default-profile.png"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\1c0fc5d8-7502-455a-a049-d4349b81c281_Chart.png",
+      "PackagePath": "staticwebassets\\challengeImage\\1c0fc5d8-7502-455a-a049-d4349b81c281_Chart.png"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\574ab4f2-d5cc-45d9-b8d8-492fb5b9ca13_Chart.png",
       "PackagePath": "staticwebassets\\challengeImage\\574ab4f2-d5cc-45d9-b8d8-492fb5b9ca13_Chart.png"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\69f07e82-c0ac-4a23-80cc-1282577633db_Chart.png",
+      "PackagePath": "staticwebassets\\challengeImage\\69f07e82-c0ac-4a23-80cc-1282577633db_Chart.png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\74cfd901-d15b-4385-9ee2-65ab66c4ba49_Chart.png",
@@ -139,6 +159,10 @@
     {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\d06b9b74-9295-4176-8531-765702367d99_Chart.png",
       "PackagePath": "staticwebassets\\challengeImage\\d06b9b74-9295-4176-8531-765702367d99_Chart.png"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\d4b11245-b7ed-4615-ab84-72a152edf46d_Screenshot (30).png",
+      "PackagePath": "staticwebassets\\challengeImage\\d4b11245-b7ed-4615-ab84-72a152edf46d_Screenshot (30).png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\challengeImage\\dc3e5b20-414a-40ee-b7e1-5dab1b8ade32_Chart.png",
@@ -201,8 +225,24 @@
       "PackagePath": "staticwebassets\\js\\UserMealPlanner.js"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\js\\chat.js",
+      "PackagePath": "staticwebassets\\js\\chat.js"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\lib\\Microsoft\\signalR\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\lib\\Microsoft\\signalR\\dist\\browser\\signalr.js"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\lib\\Microsoft\\signalR\\dist\\browser\\signalr.js.map",
+      "PackagePath": "staticwebassets\\lib\\Microsoft\\signalR\\dist\\browser\\signalr.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\lib\\Microsoft\\signalR\\dist\\browser\\signalr.min.js",
+      "PackagePath": "staticwebassets\\lib\\Microsoft\\signalR\\dist\\browser\\signalr.min.js"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -457,6 +497,14 @@
       "PackagePath": "staticwebassets\\planImage\\ee9e366c-7e13-4ea2-a0f4-0a23a3d84326_Color Hunt Palette d9edbfff98002c786590d26d.png"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\rewardImage\\15ae075a-d19e-4f7a-a9c5-50e81c122d8a_OIG2.jpg",
+      "PackagePath": "staticwebassets\\rewardImage\\15ae075a-d19e-4f7a-a9c5-50e81c122d8a_OIG2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\rewardImage\\73823baf-672a-49ff-999c-82f91b0b1acd_Color Hunt Palette d9edbfff98002c786590d26d.png",
+      "PackagePath": "staticwebassets\\rewardImage\\73823baf-672a-49ff-999c-82f91b0b1acd_Color Hunt Palette d9edbfff98002c786590d26d.png"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\rewardImage\\78103398-f647-48ca-b3a7-889c1c0a5e77_Designer (3).png",
       "PackagePath": "staticwebassets\\rewardImage\\78103398-f647-48ca-b3a7-889c1c0a5e77_Designer (3).png"
     },
@@ -479,6 +527,10 @@
     {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\rewardImage\\98a3e459-d06f-49aa-b2cb-3ceebef666d2_Designer (3).png",
       "PackagePath": "staticwebassets\\rewardImage\\98a3e459-d06f-49aa-b2cb-3ceebef666d2_Designer (3).png"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\rewardImage\\a660a218-43b0-4775-bdba-f7576f56c763_Designer (1).png",
+      "PackagePath": "staticwebassets\\rewardImage\\a660a218-43b0-4775-bdba-f7576f56c763_Designer (1).png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin\\Documents\\Diet Planning Project\\Main\\DietApp\\DietPlanner\\DietPlanner\\wwwroot\\rewardImage\\afe0906d-35a4-460f-b623-9ba60e6dba5a_Shield PNG - Free Download.jfif",

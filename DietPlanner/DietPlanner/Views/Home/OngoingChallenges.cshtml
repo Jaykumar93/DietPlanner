@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Domain.DTO.ChallengesRewardViewModel>
+<style>
+.challenges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+}
+
+.challenge-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-details {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 10px; 
+}
+
+.progress-bar {
+        background-color: #D9EDBF;
+        border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    flex-grow: 1; 
+    margin-right: 10px; 
+}
+
+.progress {
+    background-color: #4cae4c; /* Darker green for progress fill */
+    height: 100%;
+    border-radius: 5px;
+}
+
+.progress-percentage {
+    font-weight: bold;
+    color: #5cb85c; /* Green color */
+}
+
+
+</style>
+<div class="challenges-container">
+    @foreach (var challenge in Model)
+    {
+        <div class="challenge-card">
+            <h5>@challenge.ChallengeName</h5>
+            <div class="progress-details">
+                <div class="progress-bar">
+                    <div class="progress" style="width:@challenge.UserChallengeProgress%"></div>
+                </div>
+                <span class="progress-percentage">@challenge.UserChallengeProgress%</span>
+            </div>
+        </div>
+    }
+</div>
+
+
+
